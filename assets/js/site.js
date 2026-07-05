@@ -26,6 +26,7 @@
   const isDahabPage = path === '/dahab/' || path.startsWith('/dahab/');
   const isDahabPrice = path === '/dahab/price/' || path === '/dahab/price';
   const isDahabSportPrice = path === '/dahab/wingfoil/price/' || path === '/dahab/wingfoil/price' || path === '/dahab/windsurf/price/' || path === '/dahab/windsurf/price' || path === '/dahab/windsurf-kids/price/' || path === '/dahab/windsurf-kids/price';
+  const isAnyDahabPrice = isDahabPrice || isDahabSportPrice;
   const isCatalogPage = path === '/blog/' || path === '/blog/index.html' || path.startsWith('/media/');
 
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
@@ -45,6 +46,10 @@
   if (isDahabRoot) {
     loadStyle('/assets/css/dahab-hero-cta.css?v=20260705-hero-cta-2');
     loadScript('/assets/js/dahab-hero-cta.js?v=20260705-hero-cta-2');
+  }
+
+  if (isAnyDahabPrice) {
+    loadStyle('/assets/css/dahab-price-tables-full.css?v=20260705-no-choice-1');
   }
 
   if (isDahabPrice) {
