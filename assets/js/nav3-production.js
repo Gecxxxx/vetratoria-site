@@ -20,14 +20,48 @@
     if (target === '/dahab/stations') return sectionActive('/dahab/stations');
     return sectionActive(href);
   };
-  const a = (href, label, hint = '') => `<a class="${itemActive(href) ? 'is-active' : ''}" href="${href}"><strong>${label}</strong>${hint ? `<small>${hint}</small>` : ''}</a>`;
-  const drop = (label, items, isActive = false) => `<div class="vtr-drop${isActive ? ' is-active' : ''}"><button type="button" aria-expanded="false">${label} <span aria-hidden="true">⌄</span></button><div class="vtr-drop__menu">${items.join('')}</div></div>`;
+  const a = (href, label, hint = '') => `<a class='${itemActive(href) ? 'is-active' : ''}' href='${href}'><strong>${label}</strong>${hint ? `<small>${hint}</small>` : ''}</a>`;
+  const drop = (label, items, isActive = false) => `<div class='vtr-drop${isActive ? ' is-active' : ''}'><button type='button' aria-expanded='false'>${label} <span aria-hidden='true'>⌄</span></button><div class='vtr-drop__menu'>${items.join('')}</div></div>`;
 
   const ensureTopbarStyles = () => {
     if (document.getElementById('vtr-topbar-final-styles')) return;
     const style = document.createElement('style');
     style.id = 'vtr-topbar-final-styles';
-    style.textContent = `.vtr-nav__top{min-height:54px;display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important;gap:20px!important;padding:8px 34px!important;background:#10100f!important;border-bottom:1px solid rgba(255,255,255,.1)!important}.vtr-nav__top .vtr-nav__countries{height:auto!important;background:transparent!important;border:0!important;display:block!important}.vtr-nav__top .vtr-nav__countries-inner{display:flex!important;align-items:center!important;justify-content:center!important;gap:26px!important}.vtr-nav__top .vtr-nav__country{height:auto!important;padding:8px 8px!important;color:rgba(255,255,255,.72)!important;font-size:13px!important;font-weight:950!important;letter-spacing:.06em!important;text-transform:uppercase!important;border-bottom:2px solid transparent!important}.vtr-nav__top .vtr-nav__country:hover,.vtr-nav__top .vtr-nav__country.is-active{color:#fff!important;background:rgba(255,90,31,.1)!important;border-bottom-color:#ff5a1f!important}.vtr-nav__contacts{display:flex!important;align-items:center!important;gap:8px!important;justify-self:start!important;min-width:0!important;white-space:nowrap!important}.vtr-nav__contacts a{color:#fff!important;font-size:14px!important;font-weight:850!important;line-height:1!important;text-decoration:none!important}.vtr-nav__contacts a:hover{color:#ff8a3d!important}.vtr-nav__right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important;justify-self:end!important}.vtr-nav__socials{display:flex!important;align-items:center!important;gap:10px!important}.vtr-nav__socials a{color:#fff!important;font-size:13px!important;font-weight:950!important;letter-spacing:.02em!important;text-decoration:none!important}.vtr-nav__socials a:hover{color:#ff8a3d!important}.vtr-nav__lang-drop{position:relative!important}.vtr-nav__lang-drop>button{display:flex!important;align-items:center!important;gap:6px!important;border:0!important;background:transparent!important;color:#fff!important;font:inherit!important;font-size:16px!important;font-weight:950!important;cursor:pointer!important}.vtr-nav__lang-drop>button span{color:#ff5a1f!important}.vtr-nav__lang-menu{position:absolute!important;top:100%!important;right:0!important;min-width:86px!important;padding:7px!important;background:#11100f!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 18px 48px rgba(0,0,0,.38)!important;opacity:0!important;visibility:hidden!important;transform:translateY(6px)!important;pointer-events:none!important;z-index:20!important}.vtr-nav__lang-drop:hover .vtr-nav__lang-menu,.vtr-nav__lang-drop:focus-within .vtr-nav__lang-menu,.vtr-nav__lang-drop.is-open .vtr-nav__lang-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important}.vtr-nav__lang-menu a{display:block!important;padding:8px 10px!important;color:rgba(255,255,255,.78)!important;font-size:13px!important;font-weight:900!important;text-decoration:none!important}.vtr-nav__lang-menu a:hover{color:#fff!important;background:rgba(255,90,31,.1)!important}@media(max-width:1100px){.vtr-nav__top{grid-template-columns:1fr!important;gap:6px!important;padding:8px 14px!important}.vtr-nav__contacts{justify-self:center!important;justify-content:center!important;flex-wrap:wrap!important;white-space:normal!important}.vtr-nav__contacts a{font-size:12px!important}.vtr-nav__top .vtr-nav__countries-inner{gap:6px!important}.vtr-nav__top .vtr-nav__country{font-size:11px!important;padding:7px 10px!important}.vtr-nav__right{justify-self:center!important;justify-content:center!important}.site-header[data-nav].is-open .vtr-nav__mobile{top:154px!important}}@media(max-width:560px){.vtr-nav__top{gap:4px!important}.vtr-nav__contacts a{font-size:11px!important}.vtr-nav__top .vtr-nav__country{font-size:10px!important;padding:6px 7px!important}.vtr-nav__socials{gap:8px!important}.vtr-nav__socials a{font-size:12px!important}.vtr-nav__lang-drop>button{font-size:13px!important}.site-header[data-nav].is-open .vtr-nav__mobile{top:144px!important}}`;
+    style.textContent = `
+      .vtr-nav__top{min-height:54px;display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important;gap:20px!important;padding:8px 34px!important;background:#10100f!important;border-bottom:1px solid rgba(255,255,255,.1)!important}
+      .vtr-nav__top .vtr-nav__countries{height:auto!important;background:transparent!important;border:0!important;display:block!important}
+      .vtr-nav__top .vtr-nav__countries-inner{display:flex!important;align-items:center!important;justify-content:center!important;gap:26px!important}
+      .vtr-nav__top .vtr-nav__country{height:auto!important;padding:8px 8px!important;color:rgba(255,255,255,.72)!important;font-size:13px!important;font-weight:950!important;letter-spacing:.06em!important;text-transform:uppercase!important;border-bottom:2px solid transparent!important}
+      .vtr-nav__top .vtr-nav__country:hover,.vtr-nav__top .vtr-nav__country.is-active{color:#fff!important;background:rgba(255,90,31,.1)!important;border-bottom-color:#ff5a1f!important}
+      .vtr-nav__contacts{display:flex!important;align-items:center!important;gap:8px!important;justify-self:start!important;min-width:0!important;white-space:nowrap!important}
+      .vtr-nav__contacts a{color:#fff!important;font-size:14px!important;font-weight:850!important;line-height:1!important;text-decoration:none!important}
+      .vtr-nav__contacts a:hover{color:#ff8a3d!important}
+      .vtr-nav__right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important;justify-self:end!important}
+      .vtr-nav__socials{display:flex!important;align-items:center!important;gap:10px!important}
+      .vtr-nav__socials a{color:#fff!important;font-size:13px!important;font-weight:950!important;letter-spacing:.02em!important;text-decoration:none!important}
+      .vtr-nav__socials a:hover{color:#ff8a3d!important}
+      .vtr-nav__lang-drop{position:relative!important}
+      .vtr-nav__lang-drop>button{display:flex!important;align-items:center!important;gap:6px!important;border:0!important;background:transparent!important;color:#fff!important;font:inherit!important;font-size:16px!important;font-weight:950!important;cursor:pointer!important}
+      .vtr-nav__lang-drop>button span{color:#ff5a1f!important}
+      .vtr-nav__lang-menu{position:absolute!important;top:100%!important;right:0!important;min-width:86px!important;padding:7px!important;background:#11100f!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 18px 48px rgba(0,0,0,.38)!important;opacity:0!important;visibility:hidden!important;transform:translateY(6px)!important;pointer-events:none!important;z-index:20!important}
+      .vtr-nav__lang-drop:hover .vtr-nav__lang-menu,.vtr-nav__lang-drop:focus-within .vtr-nav__lang-menu,.vtr-nav__lang-drop.is-open .vtr-nav__lang-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important}
+      .vtr-nav__lang-menu a{display:block!important;padding:8px 10px!important;color:rgba(255,255,255,.78)!important;font-size:13px!important;font-weight:900!important;text-decoration:none!important}
+      .vtr-nav__lang-menu a:hover{color:#fff!important;background:rgba(255,90,31,.1)!important}
+      @media(max-width:1100px){
+        .vtr-nav__top{min-height:38px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;padding:5px 10px!important}
+        .vtr-nav__contacts,.vtr-nav__right{display:none!important}
+        .vtr-nav__top .vtr-nav__countries{width:100%!important}
+        .vtr-nav__top .vtr-nav__countries-inner{width:100%!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0!important}
+        .vtr-nav__top .vtr-nav__country{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;padding:7px 4px!important;font-size:10px!important;line-height:1!important;text-align:center!important;white-space:nowrap!important}
+        .site-header[data-nav].is-open .vtr-nav__mobile{top:94px!important}
+      }
+      @media(max-width:560px){
+        .vtr-nav__top{min-height:36px!important;padding:4px 8px!important}
+        .vtr-nav__top .vtr-nav__countries-inner{gap:3px!important}
+        .vtr-nav__top .vtr-nav__country{font-size:9px!important;padding:7px 3px!important;letter-spacing:.04em!important}
+        .site-header[data-nav].is-open .vtr-nav__mobile{top:92px!important}
+      }
+    `;
     document.head.append(style);
   };
 
@@ -37,8 +71,8 @@
     ['russia', '/russia/', 'Россия'],
   ];
 
-  const topContacts = `<div class="vtr-nav__contacts"><a href="mailto:dahab@vetratoria.ru">dahab@vetratoria.ru</a><a href="tel:+201029321772">+201029321772</a></div>`;
-  const topSocials = `<div class="vtr-nav__right"><div class="vtr-nav__socials"><a href="/contacts/" aria-label="VK">VK</a><a href="/media/" aria-label="YouTube">YT</a><a href="/contacts/" aria-label="Tripadvisor">TA</a></div><div class="vtr-nav__lang-drop"><button type="button" aria-expanded="false">RU <span aria-hidden="true">⌄</span></button><div class="vtr-nav__lang-menu"><a href="#">EN</a><a href="#">DE</a></div></div></div>`;
+  const topContacts = `<div class='vtr-nav__contacts'><a href='mailto:dahab@vetratoria.ru'>dahab@vetratoria.ru</a><a href='tel:+201029321772'>+201029321772</a></div>`;
+  const topSocials = `<div class='vtr-nav__right'><div class='vtr-nav__socials'><a href='/contacts/' aria-label='VK'>VK</a><a href='/media/' aria-label='YouTube'>YT</a><a href='/contacts/' aria-label='Tripadvisor'>TA</a></div><div class='vtr-nav__lang-drop'><button type='button' aria-expanded='false'>RU <span aria-hidden='true'>⌄</span></button><div class='vtr-nav__lang-menu'><a href='#'>EN</a><a href='#'>DE</a></div></div></div>`;
 
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
   const directions = {
@@ -47,11 +81,11 @@
     russia: ['Россия', [a('/russia/', 'Обзор'), drop('Спорт', [a('/russia/windsurf/', 'Windsurf'), a('/russia/wingfoil/', 'Wingfoil'), a('/russia/kite/', 'Kite')]), a('/russia/price/', 'Цены'), a('/russia/team/', 'Команда'), a('/media/russia/', 'Медиа'), a('/blog/?country=russia#posts', 'Блог')]],
   };
 
-  const countryHtml = countries.map(([key, href, label]) => `<a class="vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}" href="${href}">${label}</a>`).join('');
+  const countryHtml = countries.map(([key, href, label]) => `<a class='vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}' href='${href}'>${label}</a>`).join('');
   const [title, dir] = directions[country] || directions.dahab;
-  const group = (name, items) => `<div class="vtr-mobile-group"><b>${name}</b>${items.join('')}</div>`;
+  const group = (name, items) => `<div class='vtr-mobile-group'><b>${name}</b>${items.join('')}</div>`;
   const contactsGroup = group('Контакты', [a('mailto:dahab@vetratoria.ru', 'dahab@vetratoria.ru'), a('tel:+201029321772', '+201029321772'), a('https://t.me/dahabvetratoria', 'Telegram')]);
-  const directionHtml = isDirectionPage ? `<div class="vtr-nav__direction-wrap"><nav class="vtr-nav__direction" aria-label="Меню направления ${title}">${dir.join('')}</nav></div>` : '';
+  const directionHtml = isDirectionPage ? `<div class='vtr-nav__direction-wrap'><nav class='vtr-nav__direction' aria-label='Меню направления ${title}'>${dir.join('')}</nav></div>` : '';
   const mobileDirectionHtml = isDirectionPage ? group(title, dir) : '';
   const mobileMenuHtml = `${group('Главное', main)}${mobileDirectionHtml}${contactsGroup}`;
 
@@ -80,7 +114,7 @@
     document.querySelectorAll('.direction-nav').forEach((node) => node.remove());
     header.className = 'site-header vtr-nav';
     header.setAttribute('data-nav', '');
-    header.innerHTML = `<div class="vtr-nav__top">${topContacts}<nav class="vtr-nav__countries" aria-label="Выбор страны"><div class="vtr-nav__countries-inner">${countryHtml}</div></nav>${topSocials}</div><div class="vtr-nav__main"><a class="vtr-nav__logo" href="/" aria-label="Vetratoria — главная"><img src="/assets/img/vetratoria-logo.png" alt="Vetratoria"></a><nav class="vtr-nav__main-links" aria-label="Главное меню">${main.join('')}</nav><button class="vtr-nav__burger" type="button" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button></div>${directionHtml}<nav class="vtr-nav__mobile" aria-label="Мобильное меню" hidden>${mobileMenuHtml}</nav>`;
+    header.innerHTML = `<div class='vtr-nav__top'>${topContacts}<nav class='vtr-nav__countries' aria-label='Выбор страны'><div class='vtr-nav__countries-inner'>${countryHtml}</div></nav>${topSocials}</div><div class='vtr-nav__main'><a class='vtr-nav__logo' href='/' aria-label='Vetratoria — главная'><img src='/assets/img/vetratoria-logo.png' alt='Vetratoria'></a><nav class='vtr-nav__main-links' aria-label='Главное меню'>${main.join('')}</nav><button class='vtr-nav__burger' type='button' aria-expanded='false' aria-label='Открыть меню'><span></span><span></span><span></span></button></div>${directionHtml}<nav class='vtr-nav__mobile' aria-label='Мобильное меню' hidden>${mobileMenuHtml}</nav>`;
 
     const burger = header.querySelector('.vtr-nav__burger');
     if (burger) burger.addEventListener('click', () => setMobile(header, !header.classList.contains('is-open')));
