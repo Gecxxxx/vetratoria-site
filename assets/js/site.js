@@ -28,7 +28,7 @@
 
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
-  loadScript('/assets/js/nav3-production.js?v=20260705-country-menu-final-1');
+  loadScript('/assets/js/nav3-production.js?v=20260705-mobile-menu-fix-1');
   loadScript('/assets/js/footer-unified.js?v=20260704-unified-footer');
 
   if (isHomePage) {
