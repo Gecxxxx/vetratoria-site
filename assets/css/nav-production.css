@@ -5,6 +5,19 @@
   display: none !important;
 }
 
+
+/* Dahab overview: remove duplicated bottom/hero CTA buttons on /dahab/. */
+body[data-design-version="dahab-static-clean-20260704"] .hero-actions,
+body[data-design-version="dahab-static-clean-20260704"] .mobile-sticky-cta {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  body[data-design-version="dahab-static-clean-20260704"] {
+    padding-bottom: 0 !important;
+  }
+}
+
 .site-header[data-nav]:not(.vtr-nav) > * {
   visibility: hidden;
 }
@@ -280,7 +293,7 @@
   .site-header[data-nav].is-open .vtr-nav__mobile {
     display: block;
     position: fixed;
-    top: 88px;
+    top: 94px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -306,6 +319,7 @@
 
   .vtr-mobile-group a,
   .vtr-mobile-group button {
+    width: 100%;
     min-height: 42px;
     display: flex;
     align-items: center;
@@ -316,12 +330,13 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     font: inherit;
     font-weight: 820;
+    text-align: left;
     cursor: pointer;
   }
 
   .vtr-mobile-group .vtr-drop__menu {
     position: static;
-    display: grid;
+    display: none;
     gap: 5px;
     min-width: 0;
     padding: 6px 0 0 12px;
@@ -332,6 +347,10 @@
     border: 0;
     box-shadow: none;
     background: transparent;
+  }
+
+  .vtr-mobile-group .vtr-drop.is-open > .vtr-drop__menu {
+    display: grid;
   }
 
   .vtr-mobile-group .vtr-drop__menu a {
