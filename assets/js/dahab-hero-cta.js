@@ -12,7 +12,7 @@
     actions.className = 'hero-actions dahab-hero-actions';
     actions.innerHTML = `
       <a class="button button-primary" data-application-open href="#application">Написать нам</a>
-      <a class="button button-ghost" href="/dahab/price/">Цены</a>
+      <a class="button button-ghost" href="/dahab/wingfoil/price/">Цены</a>
     `;
 
     facts.insertAdjacentElement('afterend', actions);
