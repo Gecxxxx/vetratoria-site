@@ -1,4 +1,8 @@
 /* Full Dahab price tables — 2026-07-05 */
+.price-page #price-choice {
+  display: none !important;
+}
+
 .price-table-wrap {
   width: 100%;
   overflow-x: auto;
