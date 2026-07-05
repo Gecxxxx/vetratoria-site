@@ -11,7 +11,7 @@
     return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
   };
   const schoolActive = () => ['/dahab/safety', '/dahab/windsurf-kids', '/dahab/equipment', '/dahab/team'].some((href) => current === href || current.startsWith(href + '/'));
-  const dahabPriceActive = () => current === '/dahab/wingfoil/price' || current === '/dahab/windsurf/price' || current === '/dahab/windsurf-kids/price';
+  const dahabPriceActive = () => current === '/dahab/price' || current === '/dahab/wingfoil/price' || current === '/dahab/windsurf/price' || current === '/dahab/windsurf-kids/price';
   const vietnamSchoolActive = () => current.startsWith('/vietnam/team') || current.startsWith('/media/vietnam') || (current === '/blog' && location.search.includes('country=vietnam'));
   const russiaSchoolActive = () => current.startsWith('/russia/team') || current.startsWith('/russia/windsurf-kids') || current.startsWith('/media/russia') || (current === '/blog' && location.search.includes('country=russia'));
   const itemActive = (href) => {
@@ -77,9 +77,10 @@
   const topSocials = `<div class="vtr-nav__right"><div class="vtr-nav__socials"><a href="/contacts/" aria-label="VK">VK</a><a href="/media/" aria-label="YouTube">YT</a><a href="/contacts/" aria-label="Tripadvisor">TA</a></div><div class="vtr-nav__lang-drop"><button type="button" aria-expanded="false">RU <span aria-hidden="true">⌄</span></button><div class="vtr-nav__lang-menu"><a href="#">EN</a><a href="#">DE</a></div></div></div>`;
 
   const dahabPriceMenu = drop('Цены', [
+    a('/dahab/price/', 'Все цены', 'общий прайс Дахаба'),
     a('/dahab/wingfoil/price/', 'Цены Wingfoil', 'полный wingfoil прайс'),
     a('/dahab/windsurf/price/', 'Цены Windsurf', 'курсы, прокат, хранение'),
-    a('/dahab/windsurf-kids/price/', 'Цены Windsurf Kids', 'кэмп и лагерь')
+    a('/dahab/windsurf-kids/price/', 'Цены WSK', 'кэмп и лагерь')
   ], dahabPriceActive());
 
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kids, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
