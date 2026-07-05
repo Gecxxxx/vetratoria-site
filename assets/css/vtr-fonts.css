@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=Unbounded:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@600;700;800;900&display=swap');
 
 :root {
-  --font-body: "Onest", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: "Unbounded", "Onest", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Montserrat", "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body,
@@ -31,14 +31,14 @@ h3,
 .price-card__value,
 .metric strong {
   font-family: var(--font-display);
-  font-weight: 700;
-  letter-spacing: -0.045em;
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
 .hero h1,
 .home-hero h1 {
-  line-height: 0.96;
-  letter-spacing: -0.055em;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .section-heading h2,
@@ -48,7 +48,7 @@ h3,
 .learning-modal__content h2,
 .editorial-copy h3,
 .process-panel h3 {
-  line-height: 1.03;
+  line-height: 1.04;
 }
 
 .eyebrow,
@@ -70,12 +70,12 @@ h3,
 @media (max-width: 600px) {
   .hero h1,
   .home-hero h1 {
-    letter-spacing: -0.045em;
+    letter-spacing: -0.04em;
   }
 
   .section-heading h2,
   .home-heading h2,
   .cta-panel h2 {
-    letter-spacing: -0.04em;
+    letter-spacing: -0.035em;
   }
 }
