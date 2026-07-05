@@ -25,11 +25,12 @@
   const isDahabRoot = path === '/dahab/' || path === '/dahab/index.html';
   const isDahabPage = path === '/dahab/' || path.startsWith('/dahab/');
   const isDahabPrice = path === '/dahab/price/' || path === '/dahab/price';
+  const isDahabSportPrice = path === '/dahab/wingfoil/price/' || path === '/dahab/wingfoil/price' || path === '/dahab/windsurf/price/' || path === '/dahab/windsurf/price' || path === '/dahab/windsurf-kids/price/' || path === '/dahab/windsurf-kids/price';
   const isCatalogPage = path === '/blog/' || path === '/blog/index.html' || path.startsWith('/media/');
 
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
-  loadScript('/assets/js/nav3-production.js?v=20260705-mobile-menu-fix-1');
+  loadScript('/assets/js/nav3-production.js?v=20260705-price-dropdown-1');
   loadScript('/assets/js/footer-unified.js?v=20260704-unified-footer');
 
   if (isHomePage) {
@@ -51,6 +52,10 @@
     loadStyle('/assets/css/dahab-price-polish.css?v=20260704-price-final-html');
     loadStyle('/assets/css/dahab-wsk-prices.css?v=20260705-wsk-prices-1');
     loadScript('/assets/js/dahab-wsk-prices.js?v=20260705-wsk-prices-1');
+  }
+
+  if (isDahabSportPrice) {
+    loadStyle('/assets/css/dahab-wsk-prices.css?v=20260705-wsk-prices-2');
   }
 
   if (isCatalogPage) {
