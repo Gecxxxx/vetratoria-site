@@ -86,6 +86,24 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* 2026-07-05 cleanup after QA screenshots:
+   Vietnam must not show any WSK strip.
+   Russia keeps Kids as one banner only, not as a sport card. */
+.country-redesign--vietnam .wsk-strip {
+  display: none !important;
+}
+
+.country-redesign--russia .sport-tile[data-href="/russia/windsurf-kids/"],
+.country-redesign--russia .price-card[data-href="/russia/windsurf-kids/"],
+.country-redesign--russia .wsk-strip + .wsk-strip {
+  display: none !important;
+}
+
+.country-redesign--russia .sport-split__grid--four,
+.country-redesign--russia .price-grid--four {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 @media (max-width: 1180px) {
   .country-redesign .sport-split__grid--three,
   .country-redesign .sport-split__grid--four,
