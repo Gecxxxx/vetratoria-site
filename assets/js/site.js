@@ -43,8 +43,8 @@
   }
 
   if (isDahabRoot) {
-    loadStyle('/assets/css/dahab-hero-cta.css?v=20260705-hero-cta-1');
-    loadScript('/assets/js/dahab-hero-cta.js?v=20260705-hero-cta-1');
+    loadStyle('/assets/css/dahab-hero-cta.css?v=20260705-hero-cta-2');
+    loadScript('/assets/js/dahab-hero-cta.js?v=20260705-hero-cta-2');
   }
 
   if (isDahabPrice) {
