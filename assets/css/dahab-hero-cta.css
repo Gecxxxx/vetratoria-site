@@ -1,0 +1,43 @@
+/* Dahab hero CTA buttons — 2026-07-05 */
+.dahab-redesign .dahab-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.dahab-redesign .dahab-hero-actions .button {
+  min-height: 56px;
+  padding: 0 26px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 1000;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+.dahab-redesign .dahab-hero-actions .button-ghost {
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(8,8,8,.38);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+.dahab-redesign .dahab-hero-actions .button-ghost:hover {
+  border-color: rgba(255,255,255,.52);
+  background: rgba(255,255,255,.1);
+}
+
+@media (max-width: 640px) {
+  .dahab-redesign .dahab-hero-actions {
+    gap: 10px;
+  }
+
+  .dahab-redesign .dahab-hero-actions .button {
+    flex: 1 1 160px;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+}
