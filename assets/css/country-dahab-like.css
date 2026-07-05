@@ -1,0 +1,115 @@
+/* 2026-07-05: Vietnam/Russia direction pages use the same block system as Dahab. */
+.country-redesign .hero-facts,
+.dahab-redesign .hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.country-redesign .hero-facts span,
+.dahab-redesign .hero-facts span {
+  padding: 9px 13px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.86);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.country-redesign .sport-split__grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.country-redesign .sport-split__grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.country-redesign .sport-tile {
+  min-height: 520px;
+}
+
+.country-redesign .sport-tile__content p {
+  max-width: 520px;
+}
+
+.country-redesign .wsk-strip + .wsk-strip {
+  margin-top: 16px;
+}
+
+.country-redesign .price-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.country-redesign .price-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.country-redesign .trust-track--static {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.country-redesign .country-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.country-redesign .country-mini-card {
+  min-height: 100%;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.country-redesign .country-mini-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  line-height: 1.18;
+}
+
+.country-redesign .country-mini-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.country-redesign .station-advice__list--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.country-redesign .station-advice__list--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 1180px) {
+  .country-redesign .sport-split__grid--three,
+  .country-redesign .sport-split__grid--four,
+  .country-redesign .price-grid--four,
+  .country-redesign .trust-track--static,
+  .country-redesign .country-process-grid,
+  .country-redesign .station-advice__list--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .country-redesign .sport-split__grid--three,
+  .country-redesign .sport-split__grid--four,
+  .country-redesign .price-grid--three,
+  .country-redesign .price-grid--four,
+  .country-redesign .trust-track--static,
+  .country-redesign .country-process-grid,
+  .country-redesign .station-advice__list--two,
+  .country-redesign .station-advice__list--three {
+    grid-template-columns: 1fr;
+  }
+
+  .country-redesign .sport-tile {
+    min-height: 430px;
+  }
+}
