@@ -20,8 +20,8 @@
     if (target === '/dahab/stations') return sectionActive('/dahab/stations');
     return sectionActive(href);
   };
-  const a = (href, label, hint = '') => `<a class='${itemActive(href) ? 'is-active' : ''}' href='${href}'><strong>${label}</strong>${hint ? `<small>${hint}</small>` : ''}</a>`;
-  const drop = (label, items, isActive = false) => `<div class='vtr-drop${isActive ? ' is-active' : ''}'><button type='button' aria-expanded='false'>${label} <span aria-hidden='true'>⌄</span></button><div class='vtr-drop__menu'>${items.join('')}</div></div>`;
+  const a = (href, label, hint = '') => `<a class="${itemActive(href) ? 'is-active' : ''}" href="${href}"><strong>${label}</strong>${hint ? `<small>${hint}</small>` : ''}</a>`;
+  const drop = (label, items, isActive = false) => `<div class="vtr-drop${isActive ? ' is-active' : ''}"><button type="button" aria-expanded="false">${label} <span aria-hidden="true">⌄</span></button><div class="vtr-drop__menu">${items.join('')}</div></div>`;
 
   const ensureTopbarStyles = () => {
     if (document.getElementById('vtr-topbar-final-styles')) return;
@@ -71,8 +71,8 @@
     ['russia', '/russia/', 'Россия'],
   ];
 
-  const topContacts = `<div class='vtr-nav__contacts'><a href='mailto:dahab@vetratoria.ru'>dahab@vetratoria.ru</a><a href='tel:+201029321772'>+201029321772</a></div>`;
-  const topSocials = `<div class='vtr-nav__right'><div class='vtr-nav__socials'><a href='/contacts/' aria-label='VK'>VK</a><a href='/media/' aria-label='YouTube'>YT</a><a href='/contacts/' aria-label='Tripadvisor'>TA</a></div><div class='vtr-nav__lang-drop'><button type='button' aria-expanded='false'>RU <span aria-hidden='true'>⌄</span></button><div class='vtr-nav__lang-menu'><a href='#'>EN</a><a href='#'>DE</a></div></div></div>`;
+  const topContacts = `<div class="vtr-nav__contacts"><a href="mailto:dahab@vetratoria.ru">dahab@vetratoria.ru</a><a href="tel:+201029321772">+201029321772</a></div>`;
+  const topSocials = `<div class="vtr-nav__right"><div class="vtr-nav__socials"><a href="/contacts/" aria-label="VK">VK</a><a href="/media/" aria-label="YouTube">YT</a><a href="/contacts/" aria-label="Tripadvisor">TA</a></div><div class="vtr-nav__lang-drop"><button type="button" aria-expanded="false">RU <span aria-hidden="true">⌄</span></button><div class="vtr-nav__lang-menu"><a href="#">EN</a><a href="#">DE</a></div></div></div>`;
 
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
   const directions = {
@@ -81,11 +81,11 @@
     russia: ['Россия', [a('/russia/', 'Обзор'), drop('Спорт', [a('/russia/windsurf/', 'Windsurf'), a('/russia/wingfoil/', 'Wingfoil'), a('/russia/kite/', 'Kite')]), a('/russia/price/', 'Цены'), a('/russia/team/', 'Команда'), a('/media/russia/', 'Медиа'), a('/blog/?country=russia#posts', 'Блог')]],
   };
 
-  const countryHtml = countries.map(([key, href, label]) => `<a class='vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}' href='${href}'>${label}</a>`).join('');
+  const countryHtml = countries.map(([key, href, label]) => `<a class="vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}" href="${href}">${label}</a>`).join('');
   const [title, dir] = directions[country] || directions.dahab;
-  const group = (name, items) => `<div class='vtr-mobile-group'><b>${name}</b>${items.join('')}</div>`;
+  const group = (name, items) => `<div class="vtr-mobile-group"><b>${name}</b>${items.join('')}</div>`;
   const contactsGroup = group('Контакты', [a('mailto:dahab@vetratoria.ru', 'dahab@vetratoria.ru'), a('tel:+201029321772', '+201029321772'), a('https://t.me/dahabvetratoria', 'Telegram')]);
-  const directionHtml = isDirectionPage ? `<div class='vtr-nav__direction-wrap'><nav class='vtr-nav__direction' aria-label='Меню направления ${title}'>${dir.join('')}</nav></div>` : '';
+  const directionHtml = isDirectionPage ? `<div class="vtr-nav__direction-wrap"><nav class="vtr-nav__direction" aria-label="Меню направления ${title}">${dir.join('')}</nav></div>` : '';
   const mobileDirectionHtml = isDirectionPage ? group(title, dir) : '';
   const mobileMenuHtml = `${group('Главное', main)}${mobileDirectionHtml}${contactsGroup}`;
 
@@ -101,10 +101,32 @@
   const setMobile = (header, open) => {
     const button = header.querySelector('.vtr-nav__burger');
     const menu = header.querySelector('.vtr-nav__mobile');
+
     header.classList.toggle('is-open', open);
     document.body.classList.toggle('nav-lock', open);
-    if (button) button.setAttribute('aria-expanded', String(open));
-    if (menu) menu.hidden = !open;
+
+    if (button) {
+      button.setAttribute('aria-expanded', String(open));
+      button.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    }
+
+    if (menu) {
+      if (open) {
+        menu.hidden = false;
+        menu.removeAttribute('hidden');
+        menu.style.display = 'block';
+        menu.style.visibility = 'visible';
+        menu.style.opacity = '1';
+        menu.style.pointerEvents = 'auto';
+      } else {
+        menu.hidden = true;
+        menu.setAttribute('hidden', '');
+        menu.style.display = '';
+        menu.style.visibility = '';
+        menu.style.opacity = '';
+        menu.style.pointerEvents = '';
+      }
+    }
   };
 
   const run = () => {
@@ -114,10 +136,19 @@
     document.querySelectorAll('.direction-nav').forEach((node) => node.remove());
     header.className = 'site-header vtr-nav';
     header.setAttribute('data-nav', '');
-    header.innerHTML = `<div class='vtr-nav__top'>${topContacts}<nav class='vtr-nav__countries' aria-label='Выбор страны'><div class='vtr-nav__countries-inner'>${countryHtml}</div></nav>${topSocials}</div><div class='vtr-nav__main'><a class='vtr-nav__logo' href='/' aria-label='Vetratoria — главная'><img src='/assets/img/vetratoria-logo.png' alt='Vetratoria'></a><nav class='vtr-nav__main-links' aria-label='Главное меню'>${main.join('')}</nav><button class='vtr-nav__burger' type='button' aria-expanded='false' aria-label='Открыть меню'><span></span><span></span><span></span></button></div>${directionHtml}<nav class='vtr-nav__mobile' aria-label='Мобильное меню' hidden>${mobileMenuHtml}</nav>`;
+    header.innerHTML = `<div class="vtr-nav__top">${topContacts}<nav class="vtr-nav__countries" aria-label="Выбор страны"><div class="vtr-nav__countries-inner">${countryHtml}</div></nav>${topSocials}</div><div class="vtr-nav__main"><a class="vtr-nav__logo" href="/" aria-label="Vetratoria — главная"><img src="/assets/img/vetratoria-logo.png" alt="Vetratoria"></a><nav class="vtr-nav__main-links" aria-label="Главное меню">${main.join('')}</nav><button class="vtr-nav__burger" type="button" aria-expanded="false" aria-label="Открыть меню"><span></span><span></span><span></span></button></div>${directionHtml}<nav class="vtr-nav__mobile" aria-label="Мобильное меню" hidden>${mobileMenuHtml}</nav>`;
 
-    const burger = header.querySelector('.vtr-nav__burger');
-    if (burger) burger.addEventListener('click', () => setMobile(header, !header.classList.contains('is-open')));
+    const onBurgerClick = (event) => {
+      const trigger = event.target.closest('.vtr-nav__burger');
+      if (!trigger || !header.contains(trigger)) return;
+
+      event.preventDefault();
+      event.stopPropagation();
+
+      setMobile(header, !header.classList.contains('is-open'));
+    };
+
+    header.addEventListener('click', onBurgerClick, true);
     header.querySelectorAll('.vtr-drop > button, .vtr-nav__lang-drop > button').forEach((button) => {
       button.addEventListener('click', (event) => {
         event.preventDefault();
