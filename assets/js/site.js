@@ -43,6 +43,8 @@
   if (isDahabPrice) {
     loadStyle('/assets/css/dahab-price-redesign.css?v=20260704-price-final-html');
     loadStyle('/assets/css/dahab-price-polish.css?v=20260704-price-final-html');
+    loadStyle('/assets/css/dahab-wsk-prices.css?v=20260705-wsk-prices-1');
+    loadScript('/assets/js/dahab-wsk-prices.js?v=20260705-wsk-prices-1');
   }
 
   if (isCatalogPage) {
