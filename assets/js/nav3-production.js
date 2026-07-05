@@ -11,6 +11,7 @@
     return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
   };
   const schoolActive = () => ['/dahab/safety', '/dahab/windsurf-kids', '/dahab/equipment', '/dahab/team'].some((href) => current === href || current.startsWith(href + '/'));
+  const dahabPriceActive = () => current === '/dahab/wingfoil/price' || current === '/dahab/windsurf/price' || current === '/dahab/windsurf-kids/price';
   const vietnamSchoolActive = () => current.startsWith('/vietnam/team') || current.startsWith('/media/vietnam') || (current === '/blog' && location.search.includes('country=vietnam'));
   const russiaSchoolActive = () => current.startsWith('/russia/team') || current.startsWith('/russia/windsurf-kids') || current.startsWith('/media/russia') || (current === '/blog' && location.search.includes('country=russia'));
   const itemActive = (href) => {
@@ -75,9 +76,15 @@
   const topContacts = `<div class="vtr-nav__contacts"><a href="mailto:dahab@vetratoria.ru">dahab@vetratoria.ru</a><a href="tel:+201029321772">+201029321772</a></div>`;
   const topSocials = `<div class="vtr-nav__right"><div class="vtr-nav__socials"><a href="/contacts/" aria-label="VK">VK</a><a href="/media/" aria-label="YouTube">YT</a><a href="/contacts/" aria-label="Tripadvisor">TA</a></div><div class="vtr-nav__lang-drop"><button type="button" aria-expanded="false">RU <span aria-hidden="true">⌄</span></button><div class="vtr-nav__lang-menu"><a href="#">EN</a><a href="#">DE</a></div></div></div>`;
 
+  const dahabPriceMenu = drop('Цены', [
+    a('/dahab/wingfoil/price/', 'Цены Wingfoil', 'полный wingfoil прайс'),
+    a('/dahab/windsurf/price/', 'Цены Windsurf', 'курсы, прокат, хранение'),
+    a('/dahab/windsurf-kids/price/', 'Цены Windsurf Kids', 'кэмп и лагерь')
+  ], dahabPriceActive());
+
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kids, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
   const directions = {
-    dahab: ['Дахаб', [a('/dahab/', 'Обзор'), a('/dahab/wingfoil/', 'Wingfoil'), a('/dahab/windsurf/', 'Windsurf'), a('/dahab/price/', 'Цены'), a('/dahab/stations/', 'Станции'), drop('О школе', [a('/dahab/safety/', 'Безопасность', 'зоны, правила, rescue'), a('/dahab/windsurf-kids/', 'WSK', 'Windsurf Kids'), a('/dahab/equipment/', 'Оборудование', 'комплекты и защита'), a('/dahab/team/', 'Команда', 'инструкторы и станция'), a('/media/dahab/', 'Медиа направления', 'альбомы Дахаба'), a('/blog/?country=dahab#posts', 'Блог Дахаба', 'статьи с фильтром Египта')], schoolActive())]],
+    dahab: ['Дахаб', [a('/dahab/', 'Обзор'), a('/dahab/wingfoil/', 'Wingfoil'), a('/dahab/windsurf/', 'Windsurf'), dahabPriceMenu, a('/dahab/stations/', 'Станции'), drop('О школе', [a('/dahab/safety/', 'Безопасность', 'зоны, правила, rescue'), a('/dahab/windsurf-kids/', 'WSK', 'Windsurf Kids'), a('/dahab/equipment/', 'Оборудование', 'комплекты и защита'), a('/dahab/team/', 'Команда', 'инструкторы и станция'), a('/media/dahab/', 'Медиа направления', 'альбомы Дахаба'), a('/blog/?country=dahab#posts', 'Блог Дахаба', 'статьи с фильтром Египта')], schoolActive())]],
     vietnam: ['Вьетнам', [a('/vietnam/', 'Обзор'), a('/vietnam/windsurf/', 'Windsurf'), a('/vietnam/wingfoil/', 'Wingfoil'), a('/vietnam/kite/', 'Kite'), a('/vietnam/price/', 'Цены'), drop('О школе', [a('/vietnam/#spots', 'Станции', 'споты и формат'), a('/vietnam/#safety', 'Безопасность', 'правила и условия'), a('/media/vietnam/', 'Медиа', 'альбомы направления'), a('/blog/?country=vietnam#posts', 'Блог', 'статьи Вьетнама'), a('/vietnam/team/', 'Команда', 'инструкторы')], vietnamSchoolActive())]],
     russia: ['Россия', [a('/russia/', 'Обзор'), a('/russia/windsurf/', 'Windsurf'), a('/russia/wingfoil/', 'Wingfoil'), a('/russia/kite/', 'Kite'), a('/russia/price/', 'Цены'), drop('О школе', [a('/russia/#spots', 'Станции', 'споты и формат'), a('/russia/#safety', 'Безопасность', 'дети, kite, прокат'), a('/media/russia/', 'Медиа', 'альбомы направления'), a('/blog/?country=russia#posts', 'Блог', 'статьи России'), a('/russia/team/', 'Команда', 'инструкторы'), a('/russia/windsurf-kids/', 'WSK', 'Windsurf Kids')], russiaSchoolActive())]],
   };
