@@ -22,6 +22,7 @@
 
   const path = location.pathname;
   const isHomePage = path === '/' || path === '/index.html';
+  const isDahabRoot = path === '/dahab/' || path === '/dahab/index.html';
   const isDahabPage = path === '/dahab/' || path.startsWith('/dahab/');
   const isDahabPrice = path === '/dahab/price/' || path === '/dahab/price';
   const isCatalogPage = path === '/blog/' || path === '/blog/index.html' || path.startsWith('/media/');
@@ -38,6 +39,11 @@
 
   if (isDahabPage) {
     loadStyle('/assets/css/dahab-menu-clusters.css?v=20260704-menu-simple-active');
+  }
+
+  if (isDahabRoot) {
+    loadStyle('/assets/css/dahab-hero-cta.css?v=20260705-hero-cta-1');
+    loadScript('/assets/js/dahab-hero-cta.js?v=20260705-hero-cta-1');
   }
 
   if (isDahabPrice) {
