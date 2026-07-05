@@ -1,4 +1,4 @@
-﻿(() => {
+(() => {
   'use strict';
 
   const loadScript = (src) => {
@@ -26,8 +26,8 @@
   const isDahabPrice = path === '/dahab/price/' || path === '/dahab/price';
   const isCatalogPage = path === '/blog/' || path === '/blog/index.html' || path.startsWith('/media/');
 
-  loadStyle('/assets/css/nav-production.css?v=20260705-nav-production-merged-1');
-  loadScript('/assets/js/nav3-production.js?v=20260705-nav-production-merged-1');
+  loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
+  loadScript('/assets/js/nav3-production.js?v=20260705-burger-toggle-1');
   loadScript('/assets/js/footer-unified.js?v=20260704-unified-footer');
 
   if (isHomePage) {
