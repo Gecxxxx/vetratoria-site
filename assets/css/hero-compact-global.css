@@ -1,241 +1,276 @@
 /* Global compact hero typography layer.
-   Keeps hero text readable and less oversized across all Vetratoria pages. */
+   Production override loaded last from site.js. */
 
 :root {
-  --vtr-hero-title-max: 980px;
-  --vtr-hero-lead-max: 720px;
+  --vtr-hero-title-max: 900px;
+  --vtr-hero-lead-max: 640px;
 }
 
-/* Universal hero blocks */
-.hero-content,
-.hero__content,
-.page-hero__content,
-.info-hero__content,
-.country-hero__content,
-.sport-hero__content,
-.destination-hero__content {
+/* Content width */
+body .hero-content,
+body .hero__content,
+body .page-hero__content,
+body .info-hero__content,
+body .country-hero__content,
+body .sport-hero__content,
+body .destination-hero__content,
+body main > section:first-child > div:first-child {
   max-width: var(--vtr-hero-title-max) !important;
 }
 
-.hero .eyebrow,
-.page-hero .eyebrow,
-.info-hero .eyebrow,
-.country-hero .eyebrow,
-.sport-hero .eyebrow,
-.destination-hero .eyebrow {
-  margin-bottom: 14px !important;
-  font-size: clamp(10px, .86vw, 13px) !important;
+/* Eyebrow */
+body .hero .eyebrow,
+body .page-hero .eyebrow,
+body .info-hero .eyebrow,
+body .country-hero .eyebrow,
+body .sport-hero .eyebrow,
+body .destination-hero .eyebrow,
+body main > section:first-child .eyebrow {
+  margin-bottom: 12px !important;
+  font-size: clamp(10px, .78vw, 12px) !important;
   line-height: 1.1 !important;
   letter-spacing: .16em !important;
 }
 
-.hero h1,
-.page-hero h1,
-.info-hero h1,
-.country-hero h1,
-.destination-hero h1 {
+/* Main hero H1 — all ordinary pages */
+body .hero h1,
+body .page-hero h1,
+body .info-hero h1,
+body .country-hero h1,
+body .destination-hero h1,
+body main > section:first-child h1 {
   max-width: var(--vtr-hero-title-max) !important;
-  margin-bottom: 18px !important;
-  font-size: clamp(46px, 4.25vw, 82px) !important;
-  line-height: .9 !important;
-  letter-spacing: -.07em !important;
-}
-
-.sport-hero h1,
-.sport-hero__content h1 {
-  max-width: 820px !important;
-  margin-bottom: 18px !important;
-  font-size: clamp(46px, 4vw, 76px) !important;
+  margin-bottom: 16px !important;
+  font-size: clamp(44px, 4vw, 76px) !important;
   line-height: .9 !important;
   letter-spacing: -.065em !important;
 }
 
-.hero-lead,
-.hero .lead,
-.page-hero__lead,
-.info-hero__lead,
-.country-hero__lead,
-.destination-hero__lead,
-.sport-hero__lead,
-.sport-hero .lead {
+/* Sport pages need an even stronger selector because sport-page.css is aggressive. */
+body.sport-page .sport-hero .sport-hero__content h1,
+body.sport-page .sport-hero h1,
+body .sport-hero .sport-hero__content h1,
+body .sport-hero h1,
+body .sport-hero__content h1#sport-hero-title {
+  max-width: 760px !important;
+  margin-bottom: 16px !important;
+  font-size: clamp(42px, 3.55vw, 68px) !important;
+  line-height: .9 !important;
+  letter-spacing: -.06em !important;
+}
+
+/* Lead text */
+body .hero-lead,
+body .hero .lead,
+body .page-hero__lead,
+body .info-hero__lead,
+body .country-hero__lead,
+body .destination-hero__lead,
+body .sport-hero__lead,
+body .sport-hero .lead,
+body main > section:first-child p:not(.eyebrow) {
   max-width: var(--vtr-hero-lead-max) !important;
-  margin-bottom: 20px !important;
-  font-size: clamp(16px, 1.18vw, 20px) !important;
+  margin-bottom: 18px !important;
+  font-size: clamp(15px, 1.05vw, 18px) !important;
   line-height: 1.42 !important;
 }
 
-.hero-actions,
-.hero__actions,
-.page-hero__actions,
-.info-hero__actions,
-.country-hero__actions,
-.destination-hero__actions,
-.sport-hero__actions {
-  gap: 8px !important;
-  margin-top: 18px !important;
+body.sport-page .sport-hero .sport-hero__lead,
+body .sport-hero .sport-hero__lead {
+  max-width: 560px !important;
+  font-size: clamp(15px, 1.05vw, 18px) !important;
+  line-height: 1.44 !important;
 }
 
-.hero-actions .button,
-.hero .button,
-.page-hero .button,
-.info-hero .button,
-.country-hero .button,
-.destination-hero .button,
-.sport-hero .button,
-.sport-hero__actions .button {
+/* Buttons and badges */
+body .hero-actions,
+body .hero__actions,
+body .page-hero__actions,
+body .info-hero__actions,
+body .country-hero__actions,
+body .destination-hero__actions,
+body .sport-hero__actions {
+  gap: 8px !important;
+  margin-top: 16px !important;
+}
+
+body .hero-actions .button,
+body .hero .button,
+body .page-hero .button,
+body .info-hero .button,
+body .country-hero .button,
+body .destination-hero .button,
+body .sport-hero .button,
+body .sport-hero__actions .button {
   min-height: 38px !important;
   padding: 0 16px !important;
   font-size: 10px !important;
 }
 
-.hero-stats,
-.hero-badges,
-.home-advantages,
-.sport-hero__badges,
-.page-hero__badges,
-.info-hero__badges,
-.country-hero__badges {
+body .hero-stats,
+body .hero-badges,
+body .home-advantages,
+body .sport-hero__badges,
+body .page-hero__badges,
+body .info-hero__badges,
+body .country-hero__badges {
   gap: 8px !important;
-  margin-top: 18px !important;
-  margin-bottom: 20px !important;
+  margin-top: 16px !important;
+  margin-bottom: 18px !important;
 }
 
-.hero-stats > *,
-.hero-badges > *,
-.home-advantage,
-.sport-hero__badges > *,
-.page-hero__badges > *,
-.info-hero__badges > *,
-.country-hero__badges > * {
-  min-height: 32px !important;
-  padding: 7px 11px !important;
-  font-size: 10px !important;
+body .hero-stats > *,
+body .hero-badges > *,
+body .home-advantage,
+body .sport-hero__badges > *,
+body .page-hero__badges > *,
+body .info-hero__badges > *,
+body .country-hero__badges > * {
+  min-height: 30px !important;
+  padding: 7px 10px !important;
+  font-size: 9px !important;
   line-height: 1.1 !important;
 }
 
-/* Dahab overview keeps the same compact style the user approved. */
-.dahab-redesign .hero-content {
-  max-width: 920px !important;
+/* Dahab overview approved compact look */
+body.dahab-redesign .hero-content {
+  max-width: 900px !important;
   padding-top: clamp(76px, 9vh, 118px) !important;
   padding-bottom: clamp(34px, 6vh, 70px) !important;
 }
 
-.dahab-redesign .hero h1 {
-  max-width: 860px !important;
-  font-size: clamp(48px, 4.35vw, 82px) !important;
+body.dahab-redesign .hero h1 {
+  max-width: 840px !important;
+  font-size: clamp(46px, 4.15vw, 78px) !important;
 }
 
-.dahab-redesign .hero-lead {
-  max-width: 640px !important;
+body.dahab-redesign .hero-lead {
+  max-width: 620px !important;
+}
+
+@media (max-width: 1100px) {
+  body.sport-page .sport-hero .sport-hero__content h1,
+  body.sport-page .sport-hero h1,
+  body .sport-hero .sport-hero__content h1,
+  body .sport-hero h1 {
+    font-size: clamp(40px, 6vw, 58px) !important;
+  }
 }
 
 @media (max-width: 900px) {
   :root {
-    --vtr-hero-title-max: 720px;
-    --vtr-hero-lead-max: 560px;
+    --vtr-hero-title-max: 700px;
+    --vtr-hero-lead-max: 540px;
   }
 
-  .hero-content,
-  .hero__content,
-  .page-hero__content,
-  .info-hero__content,
-  .country-hero__content,
-  .sport-hero__content,
-  .destination-hero__content {
-    max-width: 720px !important;
+  body .hero-content,
+  body .hero__content,
+  body .page-hero__content,
+  body .info-hero__content,
+  body .country-hero__content,
+  body .sport-hero__content,
+  body .destination-hero__content,
+  body main > section:first-child > div:first-child {
+    max-width: 700px !important;
   }
 
-  .hero h1,
-  .page-hero h1,
-  .info-hero h1,
-  .country-hero h1,
-  .destination-hero h1,
-  .sport-hero h1,
-  .sport-hero__content h1 {
-    max-width: 680px !important;
-    font-size: clamp(42px, 8.2vw, 64px) !important;
+  body .hero h1,
+  body .page-hero h1,
+  body .info-hero h1,
+  body .country-hero h1,
+  body .destination-hero h1,
+  body .sport-hero h1,
+  body .sport-hero__content h1,
+  body main > section:first-child h1 {
+    max-width: 660px !important;
+    font-size: clamp(38px, 7.6vw, 58px) !important;
   }
 
-  .hero-lead,
-  .page-hero__lead,
-  .info-hero__lead,
-  .country-hero__lead,
-  .destination-hero__lead,
-  .sport-hero__lead {
-    max-width: 560px !important;
-    font-size: 16px !important;
+  body .hero-lead,
+  body .page-hero__lead,
+  body .info-hero__lead,
+  body .country-hero__lead,
+  body .destination-hero__lead,
+  body .sport-hero__lead,
+  body main > section:first-child p:not(.eyebrow) {
+    max-width: 540px !important;
+    font-size: 15px !important;
   }
 }
 
 @media (max-width: 560px) {
-  .hero-content,
-  .hero__content,
-  .page-hero__content,
-  .info-hero__content,
-  .country-hero__content,
-  .sport-hero__content,
-  .destination-hero__content {
+  body .hero-content,
+  body .hero__content,
+  body .page-hero__content,
+  body .info-hero__content,
+  body .country-hero__content,
+  body .sport-hero__content,
+  body .destination-hero__content,
+  body main > section:first-child > div:first-child {
     max-width: 100% !important;
   }
 
-  .hero .eyebrow,
-  .page-hero .eyebrow,
-  .info-hero .eyebrow,
-  .country-hero .eyebrow,
-  .sport-hero .eyebrow,
-  .destination-hero .eyebrow {
+  body .hero .eyebrow,
+  body .page-hero .eyebrow,
+  body .info-hero .eyebrow,
+  body .country-hero .eyebrow,
+  body .sport-hero .eyebrow,
+  body .destination-hero .eyebrow,
+  body main > section:first-child .eyebrow {
     margin-bottom: 10px !important;
     font-size: 10px !important;
   }
 
-  .hero h1,
-  .page-hero h1,
-  .info-hero h1,
-  .country-hero h1,
-  .destination-hero h1,
-  .sport-hero h1,
-  .sport-hero__content h1 {
+  body .hero h1,
+  body .page-hero h1,
+  body .info-hero h1,
+  body .country-hero h1,
+  body .destination-hero h1,
+  body .sport-hero h1,
+  body .sport-hero__content h1,
+  body main > section:first-child h1 {
     max-width: 100% !important;
     margin-bottom: 14px !important;
-    font-size: clamp(34px, 11vw, 46px) !important;
+    font-size: clamp(32px, 10.5vw, 44px) !important;
     line-height: .94 !important;
-    letter-spacing: -.06em !important;
+    letter-spacing: -.055em !important;
   }
 
-  .hero-lead,
-  .hero .lead,
-  .page-hero__lead,
-  .info-hero__lead,
-  .country-hero__lead,
-  .destination-hero__lead,
-  .sport-hero__lead,
-  .sport-hero .lead {
+  body .hero-lead,
+  body .hero .lead,
+  body .page-hero__lead,
+  body .info-hero__lead,
+  body .country-hero__lead,
+  body .destination-hero__lead,
+  body .sport-hero__lead,
+  body .sport-hero .lead,
+  body main > section:first-child p:not(.eyebrow) {
     max-width: 100% !important;
     margin-bottom: 14px !important;
     font-size: 14px !important;
     line-height: 1.42 !important;
   }
 
-  .hero-actions .button,
-  .hero .button,
-  .page-hero .button,
-  .info-hero .button,
-  .country-hero .button,
-  .destination-hero .button,
-  .sport-hero .button,
-  .sport-hero__actions .button {
+  body .hero-actions .button,
+  body .hero .button,
+  body .page-hero .button,
+  body .info-hero .button,
+  body .country-hero .button,
+  body .destination-hero .button,
+  body .sport-hero .button,
+  body .sport-hero__actions .button {
     min-height: 34px !important;
     padding: 0 12px !important;
     font-size: 9px !important;
   }
 
-  .hero-stats > *,
-  .hero-badges > *,
-  .home-advantage,
-  .sport-hero__badges > *,
-  .page-hero__badges > *,
-  .info-hero__badges > *,
-  .country-hero__badges > * {
+  body .hero-stats > *,
+  body .hero-badges > *,
+  body .home-advantage,
+  body .sport-hero__badges > *,
+  body .page-hero__badges > *,
+  body .info-hero__badges > *,
+  body .country-hero__badges > * {
     min-height: 30px !important;
     padding: 7px 9px !important;
     font-size: 9px !important;
