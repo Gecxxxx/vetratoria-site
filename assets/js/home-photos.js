@@ -37,15 +37,15 @@
 
   const setKey = (selector, key) => {
     document.querySelectorAll(selector).forEach((node) => {
-      if (node && !node.dataset.homePhoto) node.dataset.homePhoto = key;
+      if (node) node.dataset.homePhoto = key;
     });
   };
 
   const buildHeroSlider = async () => {
-    const hero = document.querySelector('.home-hero');
+    const hero = document.querySelector('.home-hero, .hero');
     if (!hero || hero.querySelector('.home-hero__slider')) return;
 
-    const existingImage = hero.querySelector('.home-hero__image');
+    const existingImage = hero.querySelector('.home-hero__image, .hero-image');
     const available = [];
 
     for (const key of heroSlides) {
@@ -84,12 +84,12 @@
   };
 
   const decorateKnownImages = () => {
-    setKey('.home-choice-card[href="/dahab/"] img, .home-choice-card[href="/dahab"] img', 'directionDahab');
-    setKey('.home-choice-card[href="/vietnam/"] img, .home-choice-card[href="/vietnam"] img', 'directionVietnam');
-    setKey('.home-choice-card[href="/russia/"] img, .home-choice-card[href="/russia"] img', 'directionRussia');
-    setKey('.home-choice-card[href="/blog/"] img, .home-choice-card[href="/blog"] img', 'blog');
-    setKey('.home-choice-card[href="/media/"] img, .home-choice-card[href="/media"] img', 'media');
-    setKey('.home-dahab-panel__media img', 'about');
+    setKey('.home-choice-card[href="/dahab/"] img, .home-choice-card[href="/dahab"] img, .home-country-card[href="/dahab/"] img, .home-country-card[href="/dahab"] img', 'directionDahab');
+    setKey('.home-choice-card[href="/vietnam/"] img, .home-choice-card[href="/vietnam"] img, .home-country-card[href="/vietnam/"] img, .home-country-card[href="/vietnam"] img', 'directionVietnam');
+    setKey('.home-choice-card[href="/russia/"] img, .home-choice-card[href="/russia"] img, .home-country-card[href="/russia/"] img, .home-country-card[href="/russia"] img', 'directionRussia');
+    setKey('.home-choice-card[href="/blog/"] img, .home-choice-card[href="/blog"] img, .home-content-card[href="/blog/"] img, .home-content-card[href="/blog"] img', 'blog');
+    setKey('.home-choice-card[href="/media/"] img, .home-choice-card[href="/media"] img, .home-content-card[href="/media/"] img, .home-content-card[href="/media"] img', 'media');
+    setKey('.home-dahab-panel__media img, .home-brand__media img', 'about');
     setKey('.home-choice-card[href="/contacts/"] img, .home-choice-card[href="/contacts"] img', 'about');
 
     const sports = document.querySelectorAll('#sports .home-card--photo img');
@@ -123,7 +123,7 @@
   const init = () => {
     decorateKnownImages();
     document.querySelectorAll('img[data-home-photo]').forEach((node) => {
-      if (node.classList.contains('home-hero__image')) return;
+      if (node.classList.contains('home-hero__image') || node.classList.contains('hero-image')) return;
       apply(node);
     });
     buildHeroSlider();
@@ -132,7 +132,7 @@
   const schedule = () => {
     init();
     window.requestAnimationFrame(init);
-    [120, 420, 1000, 1800].forEach((delay) => window.setTimeout(init, delay));
+    [120, 420, 1000, 1800, 3000].forEach((delay) => window.setTimeout(init, delay));
   };
 
   if (document.readyState === 'loading') {
