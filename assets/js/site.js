@@ -21,6 +21,7 @@
   };
 
   const path = location.pathname;
+  const normalizedPath = path.replace(/index\.html$/, '').replace(/\/$/, '') || '/';
   const isHomePage = path === '/' || path === '/index.html';
   const isDahabRoot = path === '/dahab/' || path === '/dahab/index.html';
   const isDahabPage = path === '/dahab/' || path.startsWith('/dahab/');
@@ -28,6 +29,13 @@
   const isDahabSportPrice = path === '/dahab/wingfoil/price/' || path === '/dahab/wingfoil/price' || path === '/dahab/windsurf/price/' || path === '/dahab/windsurf/price' || path === '/dahab/windsurf-kids/price/' || path === '/dahab/windsurf-kids/price';
   const isAnyDahabPrice = isDahabPrice || isDahabSportPrice;
   const isCatalogPage = path === '/blog/' || path === '/blog/index.html' || path.startsWith('/media/');
+  const isTeamCardsPage = normalizedPath === '/dahab/team'
+    || normalizedPath === '/dahab/wingfoil'
+    || normalizedPath === '/dahab/windsurf'
+    || normalizedPath === '/dahab/windsurf-kids'
+    || normalizedPath === '/vietnam/team'
+    || normalizedPath === '/russia/team'
+    || /^\/(vietnam|russia)\/(windsurf|wingfoil|kite)$/.test(normalizedPath);
 
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
@@ -67,6 +75,11 @@
 
   if (isCatalogPage) {
     loadScript('/assets/js/catalog-filter.js?v=20260705-url-filters');
+  }
+
+  if (isTeamCardsPage) {
+    loadStyle('/assets/css/team-cards.css?v=20260706-team-cards-1');
+    loadScript('/assets/js/team-cards.js?v=20260706-team-cards-1');
   }
 
   if (!isDahabPage) {
