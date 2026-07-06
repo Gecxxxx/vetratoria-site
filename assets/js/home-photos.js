@@ -33,6 +33,33 @@
     return promise;
   };
 
+  const setKey = (selector, key) => {
+    document.querySelectorAll(selector).forEach((node) => {
+      if (node && !node.dataset.homePhoto) node.dataset.homePhoto = key;
+    });
+  };
+
+  const decorateKnownImages = () => {
+    setKey('.home-hero__image', 'hero');
+    setKey('.home-choice-card[href="/dahab/"] img, .home-choice-card[href="/dahab"] img', 'directionDahab');
+    setKey('.home-choice-card[href="/vietnam/"] img, .home-choice-card[href="/vietnam"] img', 'directionVietnam');
+    setKey('.home-choice-card[href="/russia/"] img, .home-choice-card[href="/russia"] img', 'directionRussia');
+    setKey('.home-choice-card[href="/blog/"] img, .home-choice-card[href="/blog"] img', 'blog');
+    setKey('.home-choice-card[href="/media/"] img, .home-choice-card[href="/media"] img', 'media');
+    setKey('.home-dahab-panel__media img', 'hero');
+
+    const sports = document.querySelectorAll('#sports .home-card--photo img');
+    if (sports[0]) sports[0].dataset.homePhoto = 'slider6';
+    if (sports[1]) sports[1].dataset.homePhoto = 'slider2';
+    if (sports[2]) sports[2].dataset.homePhoto = 'media';
+    if (sports[3]) sports[3].dataset.homePhoto = 'slider3';
+
+    const gallery = document.querySelectorAll('#photo-story .home-photo-tile img');
+    ['slider2', 'slider6', 'slider3', 'slider5', 'slider1', 'slider4'].forEach((key, index) => {
+      if (gallery[index]) gallery[index].dataset.homePhoto = key;
+    });
+  };
+
   const apply = async (node) => {
     const key = node.dataset.homePhoto;
     const src = photos[key];
@@ -41,20 +68,32 @@
     const nextSrc = await canLoad(src);
     if (!nextSrc) return;
 
-    node.src = nextSrc;
+    if (node.getAttribute('src') !== nextSrc) {
+      node.setAttribute('src', nextSrc);
+    }
+
     node.removeAttribute('srcset');
     node.dataset.homePhotoLoaded = 'true';
   };
 
   const init = () => {
+    decorateKnownImages();
     document.querySelectorAll('img[data-home-photo]').forEach((node) => {
       apply(node);
     });
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init, { once: true });
-  } else {
+  const schedule = () => {
     init();
+    window.requestAnimationFrame(init);
+    [120, 420, 1000, 1800].forEach((delay) => window.setTimeout(init, delay));
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', schedule, { once: true });
+  } else {
+    schedule();
   }
+
+  window.addEventListener('load', schedule, { once: true });
 })();
