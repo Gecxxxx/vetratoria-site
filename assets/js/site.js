@@ -48,7 +48,7 @@
   if (isHomePage) {
     loadStyle('/assets/css/home-redesign.css?v=20260704-home-stage-2');
     loadStyle('/assets/css/home-photos.css?v=20260706-hero-slider-3');
-    loadStyle('/assets/css/home-layout-fix.css?v=20260706-final-hero-1');
+    loadStyle('/assets/css/home-layout-fix.css?v=20260706-final-hero-2');
     loadScript('/assets/js/home-redesign.js?v=20260706-final-hero-1');
   }
 
@@ -91,4 +91,8 @@
 
   loadStyle('/assets/css/vtr-components.css?v=20260704-design-system-3');
   loadStyle('/assets/css/vtr-card-position-fix.css?v=20260704-card-position-1');
+
+  if (isHomePage) {
+    loadStyle('/assets/css/home-hero-edge-final.css?v=20260706-home-edge-final-1');
+  }
 })();
