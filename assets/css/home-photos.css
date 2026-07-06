@@ -1,6 +1,7 @@
 /* Homepage photo layout layer. Loaded only on the main page. */
 
-.home-hero[data-hero-slider="true"] .home-hero__image--fallback {
+.home-hero[data-hero-slider="true"] .home-hero__image--fallback,
+.hero[data-hero-slider="true"] .hero-image.home-hero__image--fallback {
   opacity: 0;
 }
 
