@@ -3,6 +3,7 @@
 
   const photos = {
     hero: '/assets/img/home-uploaded/home-hero.webp',
+    about: '/assets/img/home-uploaded/ABOUTVETRATORIA.jpg',
     directionDahab: '/assets/img/home-uploaded/home-direction-dahab.webp',
     directionVietnam: '/assets/img/home-uploaded/home-direction-vietnam.webp',
     directionRussia: '/assets/img/home-uploaded/home-direction-russia.webp',
@@ -16,6 +17,7 @@
     slider6: '/assets/img/home-uploaded/home-slider-6.webp'
   };
 
+  const heroSlides = ['slider1', 'slider2', 'slider3', 'slider4', 'slider5', 'slider6'];
   const loaded = new Map();
 
   const canLoad = (src) => {
@@ -39,14 +41,56 @@
     });
   };
 
+  const buildHeroSlider = async () => {
+    const hero = document.querySelector('.home-hero');
+    if (!hero || hero.querySelector('.home-hero__slider')) return;
+
+    const existingImage = hero.querySelector('.home-hero__image');
+    const available = [];
+
+    for (const key of heroSlides) {
+      const src = photos[key];
+      const loadedSrc = await canLoad(src);
+      if (loadedSrc) available.push({ key, src: loadedSrc });
+    }
+
+    if (!available.length) return;
+
+    const slider = document.createElement('div');
+    slider.className = 'home-hero__slider';
+    slider.setAttribute('aria-hidden', 'true');
+    slider.style.setProperty('--home-hero-slide-count', String(available.length));
+
+    available.forEach((item, index) => {
+      const image = document.createElement('img');
+      image.src = item.src;
+      image.alt = '';
+      image.loading = index === 0 ? 'eager' : 'lazy';
+      image.decoding = 'async';
+      image.dataset.homeHeroSlide = item.key;
+      image.style.setProperty('--home-hero-slide-index', String(index));
+      slider.append(image);
+    });
+
+    if (existingImage) {
+      existingImage.dataset.homePhotoLoaded = 'true';
+      existingImage.classList.add('home-hero__image--fallback');
+      existingImage.insertAdjacentElement('afterend', slider);
+    } else {
+      hero.prepend(slider);
+    }
+
+    hero.dataset.heroSlider = 'true';
+  };
+
   const decorateKnownImages = () => {
-    setKey('.home-hero__image', 'hero');
     setKey('.home-choice-card[href="/dahab/"] img, .home-choice-card[href="/dahab"] img', 'directionDahab');
     setKey('.home-choice-card[href="/vietnam/"] img, .home-choice-card[href="/vietnam"] img', 'directionVietnam');
     setKey('.home-choice-card[href="/russia/"] img, .home-choice-card[href="/russia"] img', 'directionRussia');
     setKey('.home-choice-card[href="/blog/"] img, .home-choice-card[href="/blog"] img', 'blog');
     setKey('.home-choice-card[href="/media/"] img, .home-choice-card[href="/media"] img', 'media');
-    setKey('.home-dahab-panel__media img', 'hero');
+    setKey('.home-dahab-panel__media img', 'about');
+    setKey('.home-choice-card[href="/contacts/"] img, .home-choice-card[href="/contacts"] img', 'about');
 
     const sports = document.querySelectorAll('#sports .home-card--photo img');
     if (sports[0]) sports[0].dataset.homePhoto = 'slider6';
@@ -79,8 +123,10 @@
   const init = () => {
     decorateKnownImages();
     document.querySelectorAll('img[data-home-photo]').forEach((node) => {
+      if (node.classList.contains('home-hero__image')) return;
       apply(node);
     });
+    buildHeroSlider();
   };
 
   const schedule = () => {
