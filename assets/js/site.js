@@ -46,6 +46,7 @@
 
   if (isHomePage) {
     loadStyle('/assets/css/home-redesign.css?v=20260704-home-stage-2');
+    loadStyle('/assets/css/home-photos.css?v=20260706-home-photos-1');
     loadScript('/assets/js/home-redesign.js?v=20260704-home-stage-2');
     loadScript('/assets/js/home-photos.js?v=20260706-home-photos-1');
   }
