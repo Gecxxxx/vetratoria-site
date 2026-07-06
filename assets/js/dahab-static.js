@@ -23,8 +23,8 @@
 
   document.querySelectorAll('[data-trust-prev], [data-trust-next]').forEach((button) => {
     button.addEventListener('click', () => {
-      const key = button.dataset.trustPrev || button.dataset.trustNext;
-      const track = document.querySelector(`[data-trust-track="${key}"]`);
+      const key = button.dataset.trustPrev || button.datasetTrustNext;
+      const track = document.querySelector('[data-trust-track="' + key + '"]');
       if (!track) return;
       const direction = button.dataset.trustPrev ? -1 : 1;
       const card = track.querySelector('.trust-card');
