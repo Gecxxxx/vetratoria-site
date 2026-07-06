@@ -40,6 +40,7 @@
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
   loadStyle('/assets/css/nav-fixed-all.css?v=20260705-fixed-all-1');
+  loadStyle('/assets/css/hero-compact-global.css?v=20260706-hero-compact-global-1');
   loadScript('/assets/js/nav3-production.js?v=20260706-dahab-travel-pages-1');
   loadScript('/assets/js/nav-fixed-all.js?v=20260705-fixed-all-1');
   loadScript('/assets/js/footer-unified.js?v=20260704-unified-footer');
