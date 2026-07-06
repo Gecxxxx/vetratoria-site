@@ -1,0 +1,17 @@
+/* Team photos */
+#team-reviews .trust-card--person .trust-initial {
+  overflow: hidden !important;
+}
+
+#team-reviews .trust-card--person .trust-initial img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+}
+
+/* Hide avatars in review cards only */
+#team-reviews .trust-card .trust-initial.review-avatar-hidden {
+  display: none !important;
+}

@@ -1,0 +1,96 @@
+/* Clean Dahab overview photo fixes */
+
+/* PRICE: image area 5:4 */
+.price-card .price-photo,
+.price-card figure.price-photo {
+  display: block !important;
+  width: 100% !important;
+  aspect-ratio: 5 / 4 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.price-card .price-photo img,
+.price-card figure.price-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* AQUATORIA: photo fills visual card */
+.water-area__visual,
+.water-area__image {
+  min-height: 620px !important;
+}
+
+.water-area__image {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  background: #111 !important;
+}
+
+.water-area__image img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* block cards */
+.dahab-clean-photo-card {
+  position: relative !important;
+  overflow: hidden !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+.dahab-clean-photo-card::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.72)),
+    linear-gradient(90deg, rgba(0,0,0,.18), rgba(0,0,0,.34)) !important;
+}
+
+.dahab-clean-photo-card > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.dahab-clean-photo-card img {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+  .water-area__visual,
+  .water-area__image {
+    min-height: 420px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .water-area__visual,
+  .water-area__image {
+    min-height: 340px !important;
+    border-radius: 20px !important;
+  }
+}
