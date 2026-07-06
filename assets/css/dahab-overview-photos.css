@@ -1,1 +1,31 @@
 /* Dahab overview photo styles */
+
+.dahab-overview-hero-fallback {
+  opacity: 0;
+}
+
+.dahab-overview-hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  overflow: hidden;
+  background: #10100f;
+}
+
+.dahab-overview-hero-slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  opacity: 0;
+  transform: scale(1.03);
+  filter: saturate(.96) contrast(1.04) brightness(.86);
+  transition: opacity 900ms ease, transform 5200ms ease;
+}
+
+.dahab-overview-hero-slider img.is-active {
+  opacity: 1;
+  transform: scale(1.09);
+}
