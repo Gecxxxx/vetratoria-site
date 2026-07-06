@@ -1,0 +1,69 @@
+/* Wingfoil page uploaded photo layer */
+
+.sport-page--wingfoil .sport-hero__media img {
+  transition: opacity 650ms ease, transform 5200ms ease;
+}
+
+.sport-page--wingfoil .sport-hero__media img[data-wingfoil-hero-slide="true"] {
+  transform: scale(1.03);
+}
+
+.wingfoil-safety-photos {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 16px;
+  margin: 0 0 24px;
+}
+
+.wingfoil-safety-photos figure {
+  position: relative;
+  min-height: 320px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 22px;
+  background: #111;
+}
+
+.wingfoil-safety-photos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: saturate(.96) contrast(1.04) brightness(.88);
+}
+
+.wingfoil-safety-photos figcaption {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -.03em;
+}
+
+.wingfoil-safety-photos figcaption span {
+  color: #ff5a1f;
+  font-size: 11px;
+  font-weight: 1000;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.wingfoil-safety-photos figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.74));
+}
+
+@media (max-width: 760px) {
+  .wingfoil-safety-photos { grid-template-columns: 1fr; }
+  .wingfoil-safety-photos figure { min-height: 260px; }
+}
