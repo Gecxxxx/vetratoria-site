@@ -1,24 +1,17 @@
-/* Final last-loaded homepage hero edge override.
-   Purpose: hero photo/slider must fill the full viewport width, with no black right column. */
+/* Direct final homepage hero edge fix */
 
-body.home-redesign,
 body.home-page,
-body.modern-site.home-redesign {
-  overflow-x: clip;
+body.modern-site.home-page {
+  overflow-x: hidden !important;
 }
 
-body.home-redesign main#main,
 body.home-page main#main {
-  width: 100vw !important;
+  width: 100% !important;
   max-width: none !important;
-  margin: 0 !important;
   overflow: hidden !important;
+  background: #0f0e0d !important;
 }
 
-body.home-redesign .hero,
-body.home-redesign .hero.hero-home,
-body.home-redesign .home-hero,
-body.home-page .hero,
 body.home-page .home-hero {
   position: relative !important;
   width: 100vw !important;
@@ -26,94 +19,81 @@ body.home-page .home-hero {
   min-width: 100vw !important;
   margin-left: calc(50% - 50vw) !important;
   margin-right: calc(50% - 50vw) !important;
-  transform: none !important;
-  left: auto !important;
-  right: auto !important;
   overflow: hidden !important;
   isolation: isolate !important;
   background: #080807 !important;
 }
 
-body.home-redesign .hero::before,
-body.home-redesign .hero.hero-home::before,
-body.home-redesign .home-hero::before,
-body.home-page .hero::before,
+body.home-page .home-hero::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.54) 42%, rgba(0,0,0,.12) 76%, rgba(0,0,0,.18)),
+    linear-gradient(0deg, rgba(0,0,0,.62), transparent 58%) !important;
+}
+
+/* remove old overlay if it creates the right black block */
 body.home-page .home-hero::before {
   display: none !important;
   opacity: 0 !important;
 }
 
-body.home-redesign .hero > .hero-image,
-body.home-redesign .hero.hero-home > .hero-image,
-body.home-redesign .home-hero > .hero-image,
-body.home-redesign .home-hero > .home-hero__image,
-body.home-page .hero > .hero-image,
-body.home-page .home-hero > .hero-image,
-body.home-page .home-hero > .home-hero__image,
-body.home-redesign .hero .home-hero__slider,
-body.home-redesign .hero.hero-home .home-hero__slider,
-body.home-redesign .home-hero .home-hero__slider,
-body.home-page .hero .home-hero__slider,
-body.home-page .home-hero .home-hero__slider {
+body.home-page .home-hero__image,
+body.home-page .home-hero__slider,
+body.home-page .home-hero__slider img {
   position: absolute !important;
   inset: 0 !important;
   left: 0 !important;
-  right: 0 !important;
   top: 0 !important;
-  bottom: 0 !important;
+  right: auto !important;
+  bottom: auto !important;
   z-index: 0 !important;
   display: block !important;
   width: 100vw !important;
-  max-width: none !important;
   min-width: 100vw !important;
-  height: 100% !important;
-  max-height: none !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-  background: #080807 !important;
-}
-
-body.home-redesign .hero > .hero-image,
-body.home-redesign .hero.hero-home > .hero-image,
-body.home-redesign .home-hero > .hero-image,
-body.home-redesign .home-hero > .home-hero__image,
-body.home-page .hero > .hero-image,
-body.home-page .home-hero > .hero-image,
-body.home-page .home-hero > .home-hero__image,
-body.home-redesign .hero .home-hero__slider img,
-body.home-redesign .hero.hero-home .home-hero__slider img,
-body.home-redesign .home-hero .home-hero__slider img,
-body.home-page .hero .home-hero__slider img,
-body.home-page .home-hero .home-hero__slider img {
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-  width: 100vw !important;
   max-width: none !important;
-  min-width: 100vw !important;
   height: 100% !important;
   max-height: none !important;
   object-fit: cover !important;
   object-position: center center !important;
+  background: #080807 !important;
 }
 
-body.home-redesign .hero-shade,
-body.home-redesign .home-hero .hero-shade,
-body.home-page .hero-shade {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  width: 100vw !important;
-  max-width: none !important;
-  min-width: 100vw !important;
-  background:
-    linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.56) 44%, rgba(0,0,0,.18) 72%, rgba(0,0,0,.26)),
-    linear-gradient(0deg, rgba(0,0,0,.64), transparent 58%) !important;
-}
-
-body.home-redesign .hero-content,
-body.home-redesign .home-hero .hero-content,
-body.home-page .hero-content {
+body.home-page .home-hero__content {
   position: relative !important;
-  z-index: 3 !important;
+  z-index: 2 !important;
+  width: min(1180px, calc(100% - 48px)) !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+/* compact hero text */
+body.home-page .home-hero h1 {
+  max-width: 920px !important;
+  font-size: clamp(46px, 4.4vw, 82px) !important;
+  line-height: .9 !important;
+  letter-spacing: -.065em !important;
+}
+
+body.home-page .home-hero__lead {
+  max-width: 680px !important;
+  font-size: clamp(16px, 1.15vw, 19px) !important;
+  line-height: 1.42 !important;
+}
+
+@media (max-width: 620px) {
+  body.home-page .home-hero {
+    min-height: 700px !important;
+  }
+
+  body.home-page .home-hero__content {
+    width: min(100% - 28px, 1180px) !important;
+  }
+
+  body.home-page .home-hero h1 {
+    font-size: clamp(34px, 11vw, 46px) !important;
+  }
 }
