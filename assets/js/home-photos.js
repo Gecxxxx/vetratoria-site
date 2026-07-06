@@ -19,6 +19,7 @@
 
   const heroSlides = ['slider1', 'slider2', 'slider3', 'slider4', 'slider5', 'slider6'];
   const loaded = new Map();
+  let heroSliderTimer = null;
 
   const canLoad = (src) => {
     if (loaded.has(src)) return loaded.get(src);
@@ -41,9 +42,46 @@
     });
   };
 
+  const activateSlide = (slider, index) => {
+    const slides = Array.from(slider.querySelectorAll('img'));
+    if (!slides.length) return;
+
+    const nextIndex = ((index % slides.length) + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      slide.classList.toggle('is-active', slideIndex === nextIndex);
+      slide.setAttribute('aria-hidden', slideIndex === nextIndex ? 'false' : 'true');
+    });
+    slider.dataset.activeSlide = String(nextIndex);
+  };
+
+  const startHeroSlider = (slider) => {
+    if (!slider || slider.dataset.sliderStarted === 'true') return;
+
+    const slides = slider.querySelectorAll('img');
+    if (slides.length < 2) {
+      activateSlide(slider, 0);
+      return;
+    }
+
+    slider.dataset.sliderStarted = 'true';
+    activateSlide(slider, 0);
+
+    if (heroSliderTimer) window.clearInterval(heroSliderTimer);
+    heroSliderTimer = window.setInterval(() => {
+      const current = Number(slider.dataset.activeSlide || '0');
+      activateSlide(slider, current + 1);
+    }, 3800);
+  };
+
   const buildHeroSlider = async () => {
     const hero = document.querySelector('.home-hero, .hero');
-    if (!hero || hero.querySelector('.home-hero__slider')) return;
+    if (!hero) return;
+
+    const existingSlider = hero.querySelector('.home-hero__slider');
+    if (existingSlider) {
+      startHeroSlider(existingSlider);
+      return;
+    }
 
     const existingImage = hero.querySelector('.home-hero__image, .hero-image');
     const available = [];
@@ -58,7 +96,7 @@
 
     const slider = document.createElement('div');
     slider.className = 'home-hero__slider';
-    slider.setAttribute('aria-hidden', 'true');
+    slider.setAttribute('aria-label', 'Фото Vetratoria');
     slider.style.setProperty('--home-hero-slide-count', String(available.length));
 
     available.forEach((item, index) => {
@@ -68,7 +106,7 @@
       image.loading = index === 0 ? 'eager' : 'lazy';
       image.decoding = 'async';
       image.dataset.homeHeroSlide = item.key;
-      image.style.setProperty('--home-hero-slide-index', String(index));
+      image.dataset.slideIndex = String(index);
       slider.append(image);
     });
 
@@ -81,6 +119,7 @@
     }
 
     hero.dataset.heroSlider = 'true';
+    startHeroSlider(slider);
   };
 
   const decorateKnownImages = () => {
