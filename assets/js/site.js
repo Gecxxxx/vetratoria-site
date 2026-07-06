@@ -48,7 +48,7 @@
     loadStyle('/assets/css/home-redesign.css?v=20260704-home-stage-2');
     loadStyle('/assets/css/home-photos.css?v=20260706-home-photos-1');
     loadScript('/assets/js/home-redesign.js?v=20260704-home-stage-2');
-    loadScript('/assets/js/home-photos.js?v=20260706-home-photos-1');
+    loadScript('/assets/js/home-photos.js?v=20260706-home-photos-2');
   }
 
   if (isDahabPage) {
@@ -84,7 +84,7 @@
     loadScript('/assets/js/team-cards.js?v=20260706-team-cards-1');
   }
 
-  if (!isDahabPage) {
+  if (!isDahabPage && !isHomePage) {
     loadScript('/assets/js/photo-pass-0703.js?v=20260704-photo-final');
   }
 
