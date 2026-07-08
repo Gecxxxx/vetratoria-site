@@ -42,7 +42,7 @@
   loadStyle('/assets/css/nav-fixed-all.css?v=20260705-fixed-all-1');
   loadStyle('/assets/css/hero-compact-global.css?v=20260706-hero-compact-global-1');
   loadStyle('/assets/css/price-cleanup.css?v=20260708-remove-price-route-1');
-  loadScript('/assets/js/nav3-production.js?v=20260708-travel-merged-1');
+  loadScript('/assets/js/nav3-production.js?v=20260708-mobile-direction-first-1');
   loadScript('/assets/js/nav-fixed-all.js?v=20260705-fixed-all-1');
   loadScript('/assets/js/footer-unified.js?v=20260708-no-equipment-1');
 
