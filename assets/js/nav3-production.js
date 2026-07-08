@@ -6,7 +6,6 @@
   const country = path.startsWith('/vietnam/') ? 'vietnam' : path.startsWith('/russia/') ? 'russia' : 'dahab';
   const clean = (value) => (value || '/').split('#')[0].split('?')[0].replace(/\/$/, '') || '/';
   const current = clean(path);
-  const isHomePage = current === '/';
   const sectionActive = (href) => {
     const target = clean(href);
     return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
@@ -104,15 +103,12 @@
   const countryHtml = countries.map(([key, href, label]) => `<a class="vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}" href="${href}">${label}</a>`).join('');
   const [title, dir] = directions[country] || directions.dahab;
   const group = (name, items, isPrimary = false) => `<div class="vtr-mobile-group${isPrimary ? ' vtr-mobile-group--primary' : ''}"><b>${name}</b>${items.join('')}</div>`;
-  const detailsGroup = (name, items) => `<details class="vtr-mobile-details"><summary>${name}</summary><div class="vtr-mobile-details__content">${items.join('')}</div></details>`;
   const contactsGroup = group('Контакты', [a('mailto:dahab@vetratoria.ru', 'dahab@vetratoria.ru'), a('tel:+201029321772', '+201029321772'), a('https://t.me/dahabvetratoria', 'Telegram')]);
   const directionHtml = isDirectionPage ? `<div class="vtr-nav__direction-wrap"><nav class="vtr-nav__direction" aria-label="Меню направления ${title}">${dir.join('')}</nav></div>` : '';
   const mobileDirectionHtml = isDirectionPage ? group(title, dir, true) : '';
   const mobileMenuHtml = isDirectionPage
-    ? `${mobileDirectionHtml}${detailsGroup('Главное', mainMobile)}${contactsGroup}`
-    : isHomePage
-      ? `${group('Направления', mobileDirections, true)}${group('Главное', mainMobile)}${contactsGroup}`
-      : `${group('Направления', mobileDirections, true)}${detailsGroup('Главное', mainMobile)}${contactsGroup}`;
+    ? `${mobileDirectionHtml}${group('Главное', mainMobile)}${contactsGroup}`
+    : `${group('Направления', mobileDirections, true)}${group('Главное', mainMobile)}${contactsGroup}`;
 
   const closeDrops = (root, except = null) => {
     root.querySelectorAll('.vtr-drop,.vtr-nav__lang-drop').forEach((dropNode) => {
