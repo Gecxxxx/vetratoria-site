@@ -43,7 +43,7 @@
   loadStyle('/assets/css/hero-compact-global.css?v=20260706-hero-compact-global-1');
   loadStyle('/assets/css/price-cleanup.css?v=20260708-price-card-cta-fix-1');
   loadScript('/assets/js/copy-fixes.js?v=20260708-price-wording-1');
-  loadScript('/assets/js/nav3-production.js?v=20260708-mobile-menu-refine-2');
+  loadScript('/assets/js/nav3-production.js?v=20260708-mobile-menu-open-all-1');
   loadScript('/assets/js/nav-fixed-all.js?v=20260705-fixed-all-1');
   loadScript('/assets/js/footer-unified.js?v=20260708-no-equipment-1');
 
