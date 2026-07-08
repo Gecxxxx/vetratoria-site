@@ -36,6 +36,10 @@
     || normalizedPath === '/vietnam/team'
     || normalizedPath === '/russia/team'
     || /^\/(vietnam|russia)\/(windsurf|wingfoil|kite)$/.test(normalizedPath);
+  const isSportPage = normalizedPath === '/dahab/wingfoil'
+    || normalizedPath === '/dahab/windsurf'
+    || normalizedPath === '/dahab/windsurf-kids'
+    || /^\/(vietnam|russia)\/(windsurf|wingfoil|kite)$/.test(normalizedPath);
 
   loadStyle('/assets/css/vtr-fonts.css?v=20260705-fonts-2');
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
@@ -46,6 +50,10 @@
   loadScript('/assets/js/nav3-production.js?v=20260708-mobile-menu-open-all-1');
   loadScript('/assets/js/nav-fixed-all.js?v=20260705-fixed-all-1');
   loadScript('/assets/js/footer-unified.js?v=20260708-no-equipment-1');
+
+  if (isSportPage) {
+    loadScript('/assets/js/equipment-block-cleanup.js?v=20260708-safety-only-1');
+  }
 
   if (isHomePage) {
     loadStyle('/assets/css/home-redesign.css?v=20260704-home-stage-2');
