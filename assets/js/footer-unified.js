@@ -16,12 +16,12 @@
       ],
     },
     dahab: {
-      text: 'Египет · Дахаб: Wingfoil, Windsurf, Windsurf Kids, станции, цены, команда, оборудование и безопасность.',
+      text: 'Египет · Дахаб: Wingfoil, Windsurf, Windsurf Kids, станции, цены, команда и безопасность.',
       badges: ['Дахаб', 'Wing Center', 'Swiss Inn', 'Ganet Sinai'],
       cols: [
         ['Дахаб', [['Обзор','/dahab/'], ['Цены','/dahab/price/'], ['Станции','/dahab/stations/'], ['Контакты','/contacts/']]],
         ['Спорт', [['Wingfoil','/dahab/wingfoil/'], ['Windsurf','/dahab/windsurf/'], ['Windsurf Kids','/dahab/windsurf-kids/']]],
-        ['О школе', [['Команда','/dahab/team/'], ['Снаряжение','/dahab/equipment/'], ['Безопасность','/dahab/safety/']]],
+        ['О школе', [['Команда','/dahab/team/'], ['Безопасность','/dahab/safety/'], ['Как добраться','/dahab/how-to-get/']]],
         ['Связь', [['dahab@vetratoria.ru','mailto:dahab@vetratoria.ru'], ['+201029321772','tel:+201029321772'], ['Telegram','https://t.me/dahabvetratoria']]],
       ],
     },
