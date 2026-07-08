@@ -1,0 +1,4 @@
+/* 2026-07-08: remove decorative route badges from all price sections/pages. */
+.price-route {
+  display: none !important;
+}
