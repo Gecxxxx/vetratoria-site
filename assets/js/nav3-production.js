@@ -6,6 +6,7 @@
   const country = path.startsWith('/vietnam/') ? 'vietnam' : path.startsWith('/russia/') ? 'russia' : 'dahab';
   const clean = (value) => (value || '/').split('#')[0].split('?')[0].replace(/\/$/, '') || '/';
   const current = clean(path);
+  const isHomePage = current === '/';
   const sectionActive = (href) => {
     const target = clean(href);
     return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
@@ -59,7 +60,6 @@
         .site-header[data-nav].is-open .vtr-nav__mobile{top:var(--vtr-mobile-menu-top,94px)!important;height:calc(100dvh - var(--vtr-mobile-menu-top,94px))!important;bottom:auto!important}
         .vtr-mobile-group--primary{padding:10px!important;border:1px solid rgba(255,90,31,.22)!important;background:rgba(255,90,31,.055)!important}
         .vtr-mobile-group--primary>b{font-size:12px!important;color:#fff!important}
-        .vtr-mobile-group--primary>b:after{content:' · открыто';color:#ff5a1f;font-weight:950}
         .vtr-mobile-details{display:block!important;margin-bottom:16px!important;border:1px solid rgba(255,255,255,.08)!important;background:rgba(255,255,255,.025)!important}
         .vtr-mobile-details>summary{min-height:44px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:0 12px!important;color:#ff5a1f!important;font-size:11px!important;font-weight:1000!important;letter-spacing:.12em!important;text-transform:uppercase!important;cursor:pointer!important;list-style:none!important}
         .vtr-mobile-details>summary::-webkit-details-marker{display:none!important}
@@ -110,7 +110,9 @@
   const mobileDirectionHtml = isDirectionPage ? group(title, dir, true) : '';
   const mobileMenuHtml = isDirectionPage
     ? `${mobileDirectionHtml}${detailsGroup('Главное', mainMobile)}${contactsGroup}`
-    : `${group('Направления', mobileDirections, true)}${detailsGroup('Главное', mainMobile)}${contactsGroup}`;
+    : isHomePage
+      ? `${group('Направления', mobileDirections, true)}${group('Главное', mainMobile)}${contactsGroup}`
+      : `${group('Направления', mobileDirections, true)}${detailsGroup('Главное', mainMobile)}${contactsGroup}`;
 
   const closeDrops = (root, except = null) => {
     root.querySelectorAll('.vtr-drop,.vtr-nav__lang-drop').forEach((dropNode) => {
