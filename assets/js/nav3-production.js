@@ -12,8 +12,8 @@
   };
   const schoolActive = () => ['/dahab/safety', '/dahab/windsurf-kids', '/dahab/team', '/dahab/how-to-get', '/dahab/where-to-stay'].some((href) => current === href || current.startsWith(href + '/'));
   const dahabPriceActive = () => current === '/dahab/price' || current === '/dahab/wingfoil/price' || current === '/dahab/windsurf/price' || current === '/dahab/windsurf-kids/price';
-  const vietnamSchoolActive = () => current.startsWith('/vietnam/team') || current.startsWith('/media/vietnam') || (current === '/blog' && location.search.includes('country=vietnam'));
-  const russiaSchoolActive = () => current.startsWith('/russia/team') || current.startsWith('/media/russia') || (current === '/blog' && location.search.includes('country=russia'));
+  const vietnamSchoolActive = () => current.startsWith('/vietnam/team') || current.startsWith('/media/vietnam');
+  const russiaSchoolActive = () => current.startsWith('/russia/team') || current.startsWith('/media/russia');
   const itemActive = (href) => {
     const target = clean(href);
     if (target === '/dahab') return current === '/dahab';
@@ -85,9 +85,9 @@
 
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
   const directions = {
-    dahab: ['Дахаб', [a('/dahab/', 'Обзор'), a('/dahab/wingfoil/', 'Wingfoil'), a('/dahab/windsurf/', 'Windsurf'), dahabPriceMenu, a('/dahab/stations/', 'Станции'), drop('О школе', [a('/dahab/safety/', 'Безопасность', 'зоны, правила, rescue'), a('/dahab/windsurf-kids/', 'WSK', 'Windsurf Kids'), a('/dahab/team/', 'Команда', 'инструкторы и станция'), a('/dahab/how-to-get/', 'Как добраться', 'аэропорт, трансфер, дорога'), a('/dahab/where-to-stay/', 'Где жить в Дахабе', 'отели, районы, станция'), a('/media/dahab/', 'Медиа направления', 'альбомы Дахаба'), a('/blog/?country=dahab#posts', 'Блог Дахаба', 'статьи с фильтром Египта')], schoolActive())]],
-    vietnam: ['Вьетнам', [a('/vietnam/', 'Обзор'), a('/vietnam/windsurf/', 'Windsurf'), a('/vietnam/wingfoil/', 'Wingfoil'), a('/vietnam/kite/', 'Kite'), a('/vietnam/price/', 'Цены'), drop('О школе', [a('/vietnam/#spots', 'Станции', 'споты и формат'), a('/vietnam/#safety', 'Безопасность', 'правила и условия'), a('/media/vietnam/', 'Медиа', 'альбомы направления'), a('/blog/?country=vietnam#posts', 'Блог', 'статьи Вьетнама'), a('/vietnam/team/', 'Команда', 'инструкторы')], vietnamSchoolActive())]],
-    russia: ['Россия', [a('/russia/', 'Обзор'), a('/russia/windsurf/', 'Windsurf'), a('/russia/wingfoil/', 'Wingfoil'), a('/russia/kite/', 'Kite'), a('/russia/price/', 'Цены'), drop('О школе', [a('/russia/#spots', 'Станции', 'споты и формат'), a('/russia/#safety', 'Безопасность', 'kite, прокат'), a('/media/russia/', 'Медиа', 'альбомы направления'), a('/blog/?country=russia#posts', 'Блог', 'статьи России'), a('/russia/team/', 'Команда', 'инструкторы')], russiaSchoolActive())]],
+    dahab: ['Дахаб', [a('/dahab/', 'Обзор'), a('/dahab/wingfoil/', 'Wingfoil'), a('/dahab/windsurf/', 'Windsurf'), dahabPriceMenu, a('/dahab/stations/', 'Станции'), drop('О школе', [a('/dahab/safety/', 'Безопасность', 'зоны, правила, rescue'), a('/dahab/windsurf-kids/', 'WSK', 'Windsurf Kids'), a('/dahab/team/', 'Команда', 'инструкторы и станция'), a('/dahab/how-to-get/', 'Как добраться', 'аэропорт, трансфер, дорога'), a('/dahab/where-to-stay/', 'Где жить в Дахабе', 'отели, районы, станция'), a('/media/dahab/', 'Медиа направления', 'альбомы Дахаба')], schoolActive())]],
+    vietnam: ['Вьетнам', [a('/vietnam/', 'Обзор'), a('/vietnam/windsurf/', 'Windsurf'), a('/vietnam/wingfoil/', 'Wingfoil'), a('/vietnam/kite/', 'Kite'), a('/vietnam/price/', 'Цены'), drop('О школе', [a('/vietnam/#spots', 'Станции', 'споты и формат'), a('/vietnam/#safety', 'Безопасность', 'правила и условия'), a('/media/vietnam/', 'Медиа', 'альбомы направления'), a('/vietnam/team/', 'Команда', 'инструкторы')], vietnamSchoolActive())]],
+    russia: ['Россия', [a('/russia/', 'Обзор'), a('/russia/windsurf/', 'Windsurf'), a('/russia/wingfoil/', 'Wingfoil'), a('/russia/kite/', 'Kite'), a('/russia/price/', 'Цены'), drop('О школе', [a('/russia/#spots', 'Станции', 'споты и формат'), a('/russia/#safety', 'Безопасность', 'kite, прокат'), a('/media/russia/', 'Медиа', 'альбомы направления'), a('/russia/team/', 'Команда', 'инструкторы')], russiaSchoolActive())]],
   };
 
   const countryHtml = countries.map(([key, href, label]) => `<a class="vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}" href="${href}">${label}</a>`).join('');
