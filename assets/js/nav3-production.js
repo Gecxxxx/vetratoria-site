@@ -57,6 +57,15 @@
         .vtr-nav__top .vtr-nav__countries-inner{width:100%!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0!important}
         .vtr-nav__top .vtr-nav__country{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;padding:7px 4px!important;font-size:10px!important;line-height:1!important;text-align:center!important;white-space:nowrap!important}
         .site-header[data-nav].is-open .vtr-nav__mobile{top:var(--vtr-mobile-menu-top,94px)!important;height:calc(100dvh - var(--vtr-mobile-menu-top,94px))!important;bottom:auto!important}
+        .vtr-mobile-group--primary{padding:10px!important;border:1px solid rgba(255,90,31,.22)!important;background:rgba(255,90,31,.055)!important}
+        .vtr-mobile-group--primary>b{font-size:12px!important;color:#fff!important}
+        .vtr-mobile-group--primary>b:after{content:' · открыто';color:#ff5a1f;font-weight:950}
+        .vtr-mobile-details{display:block!important;margin-bottom:16px!important;border:1px solid rgba(255,255,255,.08)!important;background:rgba(255,255,255,.025)!important}
+        .vtr-mobile-details>summary{min-height:44px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:0 12px!important;color:#ff5a1f!important;font-size:11px!important;font-weight:1000!important;letter-spacing:.12em!important;text-transform:uppercase!important;cursor:pointer!important;list-style:none!important}
+        .vtr-mobile-details>summary::-webkit-details-marker{display:none!important}
+        .vtr-mobile-details>summary:after{content:'⌄';color:#ff5a1f;font-size:13px;transition:transform .18s ease}
+        .vtr-mobile-details[open]>summary:after{transform:rotate(180deg)}
+        .vtr-mobile-details__content{display:grid!important;gap:6px!important;padding:0 10px 10px!important}
       }
       @media(max-width:560px){
         .vtr-nav__top{min-height:36px!important;padding:4px 8px!important}
@@ -84,6 +93,8 @@
   ], dahabPriceActive());
 
   const main = [a('/', 'Vetratoria'), drop('Направления', [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kite')]), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
+  const mainMobile = [a('/', 'Vetratoria'), a('/blog/', 'Блог'), a('/media/', 'Медиа'), a('/contacts/', 'Контакты')];
+  const mobileDirections = [a('/dahab/', 'Египет · Дахаб', 'Wingfoil, Windsurf, Kids'), a('/vietnam/', 'Вьетнам · Муйне', 'Windsurf, Wingfoil, Kite'), a('/russia/', 'Россия · Должанская', 'Windsurf, Wingfoil, Kite')];
   const directions = {
     dahab: ['Дахаб', [a('/dahab/', 'Обзор'), a('/dahab/wingfoil/', 'Wingfoil'), a('/dahab/windsurf/', 'Windsurf'), dahabPriceMenu, a('/dahab/stations/', 'Станции'), drop('О школе', [a('/dahab/safety/', 'Безопасность', 'зоны, правила, rescue'), a('/dahab/windsurf-kids/', 'WSK', 'Windsurf Kids'), a('/dahab/team/', 'Команда', 'инструкторы и станция'), a('/dahab/how-to-get/', 'Как добраться и где жить', 'аэропорт, трансфер, отели'), a('/media/dahab/', 'Медиа направления', 'альбомы Дахаба')], schoolActive())]],
     vietnam: ['Вьетнам', [a('/vietnam/', 'Обзор'), a('/vietnam/windsurf/', 'Windsurf'), a('/vietnam/wingfoil/', 'Wingfoil'), a('/vietnam/kite/', 'Kite'), a('/vietnam/price/', 'Цены'), drop('О школе', [a('/vietnam/#spots', 'Станции', 'споты и формат'), a('/vietnam/#safety', 'Безопасность', 'правила и условия'), a('/media/vietnam/', 'Медиа', 'альбомы направления'), a('/vietnam/team/', 'Команда', 'инструкторы')], vietnamSchoolActive())]],
@@ -92,11 +103,14 @@
 
   const countryHtml = countries.map(([key, href, label]) => `<a class="vtr-nav__country${key === country && isDirectionPage ? ' is-active' : ''}" href="${href}">${label}</a>`).join('');
   const [title, dir] = directions[country] || directions.dahab;
-  const group = (name, items) => `<div class="vtr-mobile-group"><b>${name}</b>${items.join('')}</div>`;
+  const group = (name, items, isPrimary = false) => `<div class="vtr-mobile-group${isPrimary ? ' vtr-mobile-group--primary' : ''}"><b>${name}</b>${items.join('')}</div>`;
+  const detailsGroup = (name, items) => `<details class="vtr-mobile-details"><summary>${name}</summary><div class="vtr-mobile-details__content">${items.join('')}</div></details>`;
   const contactsGroup = group('Контакты', [a('mailto:dahab@vetratoria.ru', 'dahab@vetratoria.ru'), a('tel:+201029321772', '+201029321772'), a('https://t.me/dahabvetratoria', 'Telegram')]);
   const directionHtml = isDirectionPage ? `<div class="vtr-nav__direction-wrap"><nav class="vtr-nav__direction" aria-label="Меню направления ${title}">${dir.join('')}</nav></div>` : '';
-  const mobileDirectionHtml = isDirectionPage ? group(title, dir) : '';
-  const mobileMenuHtml = `${group('Главное', main)}${mobileDirectionHtml}${contactsGroup}`;
+  const mobileDirectionHtml = isDirectionPage ? group(title, dir, true) : '';
+  const mobileMenuHtml = isDirectionPage
+    ? `${mobileDirectionHtml}${detailsGroup('Главное', mainMobile)}${contactsGroup}`
+    : `${group('Направления', mobileDirections, true)}${detailsGroup('Главное', mainMobile)}${contactsGroup}`;
 
   const closeDrops = (root, except = null) => {
     root.querySelectorAll('.vtr-drop,.vtr-nav__lang-drop').forEach((dropNode) => {
