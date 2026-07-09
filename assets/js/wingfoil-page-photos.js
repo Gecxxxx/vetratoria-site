@@ -52,29 +52,48 @@
   };
 
   const startHeroSlider = async () => {
-    const img = document.querySelector('.sport-page--wingfoil .sport-hero__media img');
-    if (!img) return;
+    const media = document.querySelector('.sport-page--wingfoil .sport-hero__media');
+    const original = media?.querySelector('img');
+    if (!media || !original) return;
+
     const available = [];
     for (const src of images.hero) {
       const ok = await preload(src);
       if (ok) available.push(ok);
     }
     if (!available.length) return;
+
+    const layers = [original, original.cloneNode(false)];
+    layers.forEach((layer, index) => {
+      layer.classList.add('wingfoil-hero-layer');
+      layer.classList.toggle('is-active', index === 0);
+      layer.removeAttribute('srcset');
+      layer.dataset.wingfoilHeroSlide = 'true';
+      layer.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+    });
+    if (!layers[1].parentNode) media.append(layers[1]);
+
+    original.src = available[0];
+    layers[1].src = available[1 % available.length] || available[0];
+    heroIndex = 1;
+
     const apply = () => {
+      const nextLayer = layers[heroIndex % 2];
+      const prevLayer = layers[(heroIndex + 1) % 2];
       const src = available[heroIndex % available.length];
-      img.style.opacity = '.35';
-      window.setTimeout(() => {
-        img.src = src;
-        img.removeAttribute('srcset');
-        img.dataset.wingfoilHeroSlide = 'true';
-        img.style.opacity = '1';
-        window.__wingfoilHeroState = { active: heroIndex % available.length, total: available.length, src: img.src };
-        heroIndex += 1;
-      }, 180);
+
+      nextLayer.src = src;
+      nextLayer.removeAttribute('srcset');
+      nextLayer.classList.add('is-active');
+      nextLayer.setAttribute('aria-hidden', 'false');
+      prevLayer.classList.remove('is-active');
+      prevLayer.setAttribute('aria-hidden', 'true');
+      window.__wingfoilHeroState = { active: heroIndex % available.length, total: available.length, src: nextLayer.src };
+      heroIndex += 1;
     };
-    apply();
+
     if (heroTimer) window.clearInterval(heroTimer);
-    if (available.length > 1) heroTimer = window.setInterval(apply, 4200);
+    if (available.length > 1) heroTimer = window.setInterval(apply, 5800);
   };
 
   const replaceStaticImages = () => {

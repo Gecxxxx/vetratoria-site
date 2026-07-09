@@ -31,8 +31,8 @@ body.home-page .home-hero::after {
   z-index: 1 !important;
   pointer-events: none !important;
   background:
-    linear-gradient(90deg, rgba(0,0,0,.86), rgba(0,0,0,.54) 42%, rgba(0,0,0,.12) 76%, rgba(0,0,0,.18)),
-    linear-gradient(0deg, rgba(0,0,0,.62), transparent 58%) !important;
+    linear-gradient(90deg, rgba(0,0,0,.31), rgba(0,0,0,.13) 42%, rgba(0,0,0,0) 78%),
+    linear-gradient(0deg, rgba(0,0,0,.31), transparent 44%) !important;
 }
 
 /* remove old overlay if it creates the right black block */
@@ -60,6 +60,7 @@ body.home-page .home-hero__slider img {
   object-fit: cover !important;
   object-position: center center !important;
   background: #080807 !important;
+  filter: saturate(1.18) contrast(1.03) brightness(1.12) !important;
 }
 
 body.home-page .home-hero__content {

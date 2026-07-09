@@ -1,8 +1,8 @@
 RewriteEngine On
 RedirectMatch 301 ^/en(?:/.*)?$ /
 Redirect 301 /about/ /
-Redirect 301 /dahab/equipment/windsurf/ /dahab/equipment/#windsurf
-Redirect 301 /dahab/equipment/wingfoil/ /dahab/equipment/#wingfoil
+Redirect 301 /dahab/equipment/windsurf/ /dahab/
+Redirect 301 /dahab/equipment/wingfoil/ /dahab/
 Redirect 301 /dahab/how-to-get/ /dahab/#contact
 Redirect 301 /dahab/kids/ /dahab/windsurf-kids/
 Redirect 301 /dahab/prices/ /dahab/price/
@@ -12,7 +12,7 @@ Redirect 301 /dahab/stations/swiss-inn/ /dahab/stations/#swiss-inn
 Redirect 301 /dahab/stations/wing-center/ /dahab/stations/#wing-center
 Redirect 301 /dahab/team/windsurf/ /dahab/team/#windsurf
 Redirect 301 /dahab/team/wingfoil/ /dahab/team/#wingfoil
-Redirect 301 /dahab/where-to-stay/ /dahab/#contact
+Redirect 301 /dahab/where-to-stay/ /dahab/how-to-get/#hotels
 Redirect 301 /dahab/windsurf/blog/ /dahab/blog/windsurf/
 Redirect 301 /dahab/windsurf/prices/ /dahab/windsurf/price/
 Redirect 301 /dahab/windsurf/rental/ /dahab/windsurf/price/#rental
@@ -23,7 +23,7 @@ Redirect 301 /dahab/wingfoil/prices/ /dahab/wingfoil/price/
 Redirect 301 /dahab/wingfoil/rental/ /dahab/wingfoil/price/#rental
 Redirect 301 /dahab/wingfoil/training/ /dahab/wingfoil/
 Redirect 301 /destinations/ /
-Redirect 301 /equipment/ /dahab/equipment/
+Redirect 301 /equipment/ /dahab/
 Redirect 301 /reviews/ /
 Redirect 301 /russia/how-to-get/ /russia/#contact
 Redirect 301 /russia/prices/ /russia/price/

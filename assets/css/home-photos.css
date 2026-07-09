@@ -21,14 +21,14 @@
   object-fit: cover;
   opacity: 0;
   transform: scale(1.04);
-  filter: saturate(.94) contrast(1.06) brightness(.82);
-  transition: opacity 900ms ease, transform 5200ms ease;
+  filter: saturate(1.12) contrast(1.03) brightness(1.08);
+  transition: opacity 1500ms cubic-bezier(.22,.72,.22,1), transform 9000ms ease;
   will-change: opacity, transform;
 }
 
 .home-hero__slider img.is-active {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.075);
 }
 
 .home-section--gallery {
@@ -119,7 +119,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .home-hero__slider img {
-    transition: opacity 250ms ease;
+    transition: opacity 300ms ease;
     transform: none;
   }
 

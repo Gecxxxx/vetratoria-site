@@ -6,13 +6,13 @@ html{scroll-behavior:smooth}body.modern-site{background:var(--vtr-bg);color:var(
 /* Sections */
 .modern-site .section,.modern-site .home-section,.modern-site .price-section{padding:var(--vtr-section) 0;background:var(--vtr-bg);border-top:1px solid var(--vtr-line-soft)}.modern-site .section-soft,.modern-site .home-section--soft,.modern-site .price-section--soft{background:linear-gradient(180deg,var(--vtr-bg-soft),var(--vtr-bg))!important}.modern-site .section-dark,.modern-site .price-section--dark{background:#090908!important}.modern-site .section-inner,.modern-site .home-inner,.modern-site .price-inner{width:min(var(--vtr-max),calc(100% - 48px));margin:0 auto}.modern-site .section-heading,.modern-site .home-heading,.modern-site .price-heading{max-width:860px;margin:0 0 34px}.modern-site .section-heading h2,.modern-site .home-heading h2,.modern-site .price-heading h2{margin:0 0 16px;color:#fff;font-size:clamp(36px,5vw,72px);line-height:.94;letter-spacing:-.055em}.modern-site .section-heading p,.modern-site .home-heading p,.modern-site .price-heading p{margin:0;color:var(--vtr-muted);font-size:18px;line-height:1.55}.modern-site .eyebrow{color:var(--vtr-orange)!important;font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}
 /* Hero */
-.modern-site .hero{position:relative;min-height:720px;margin:0;border-radius:0!important;overflow:hidden;background:#080807}.modern-site .hero-image,.modern-site .hero-shade{border-radius:0!important}.modern-site .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.modern-site .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.48) 48%,rgba(0,0,0,.18))}.modern-site .hero-content{position:relative;z-index:2;width:min(var(--vtr-max),calc(100% - 48px));margin:0 auto;padding:160px 0 90px}.modern-site .hero h1{max-width:1120px;margin:0 0 22px;color:#fff;font-size:clamp(52px,8vw,132px);line-height:.88;letter-spacing:-.07em}.modern-site .hero-lead{max-width:850px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(20px,2.4vw,34px);line-height:1.42}.modern-site .hero-actions,.modern-site .price-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.modern-site .hero{position:relative;min-height:720px;margin:0;border-radius:0!important;overflow:hidden;background:#080807}.modern-site .hero-image,.modern-site .hero-shade{border-radius:0!important}.modern-site .hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.modern-site .hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,.08) 46%,rgba(0,0,0,0) 78%),linear-gradient(0deg,rgba(0,0,0,.14),transparent 46%)}.modern-site .hero-content{position:relative;z-index:2;width:min(var(--vtr-max),calc(100% - 48px));margin:0 auto;padding:160px 0 90px}.modern-site .hero h1{max-width:1120px;margin:0 0 22px;color:#fff;font-size:clamp(52px,8vw,132px);line-height:.88;letter-spacing:-.07em}.modern-site .hero-lead{max-width:850px;margin:0;color:rgba(255,255,255,.82);font-size:clamp(20px,2.4vw,34px);line-height:1.42}.modern-site .hero-actions,.modern-site .price-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 /* Hero feature badges */
 .modern-site .hero-facts,.modern-site .hero-feature-pills,.modern-site .price-hero-features,.modern-site .home-advantages{display:flex!important;flex-wrap:wrap!important;gap:10px!important;max-width:980px!important;margin:24px 0 30px!important}.modern-site .hero-facts span,.modern-site .hero-feature-pills span,.modern-site .price-hero-features span,.modern-site .home-advantage{min-height:54px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:0 22px!important;border-radius:0!important;border:1px solid rgba(255,255,255,.18)!important;border-left:3px solid var(--vtr-orange)!important;background:rgba(12,12,10,.56)!important;color:#fff!important;box-shadow:none!important;backdrop-filter:blur(10px)!important;text-transform:uppercase!important;letter-spacing:.08em!important;font-weight:950!important;font-size:13px!important;line-height:1.1!important}.modern-site .home-advantage{min-width:190px!important;display:grid!important;grid-template-columns:auto 1fr!important;gap:10px!important;justify-content:start!important;text-align:left!important}.modern-site .home-advantage b{margin:0!important;color:var(--vtr-orange)!important;font-size:12px!important;line-height:1!important}.modern-site .home-advantage span{font-size:14px!important;line-height:1.1!important;color:#fff!important}.modern-site .hero-facts span:hover,.modern-site .hero-feature-pills span:hover,.modern-site .price-hero-features span:hover,.modern-site .home-advantage:hover{border-color:rgba(255,90,31,.46)!important;background:rgba(20,20,18,.68)!important}
 /* Cards */
 .modern-site .card,.modern-site .price-card,.modern-site .payment-card,.modern-site details,.modern-site .price-table-card{border-radius:var(--vtr-radius-lg)!important;border:1px solid var(--vtr-line)!important;background:linear-gradient(180deg,var(--vtr-card),var(--vtr-card-2))!important;color:#fff!important;box-shadow:0 16px 42px rgba(0,0,0,.18);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}.modern-site .card:hover,.modern-site .price-card:hover,.modern-site .payment-card:hover{transform:translateY(-3px);border-color:rgba(255,90,31,.34)!important;box-shadow:var(--vtr-shadow)}.modern-site .card p,.modern-site .price-card p,.modern-site .payment-card p,.modern-site details p{color:var(--vtr-muted)!important}.modern-site .card-grid,.modern-site .price-grid,.modern-site .payment-grid{gap:18px!important}
 /* Photo cards */
-.modern-site .photo-card,.modern-site .sport-tile,.modern-site .sport-choice-card,.modern-site .price-entry,.modern-site .home-country-card,.modern-site .home-content-card{position:relative;overflow:hidden;border:0!important;border-radius:var(--vtr-radius-lg)!important;background:#111;color:#fff;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 18px 58px rgba(0,0,0,.28);transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}.modern-site .photo-card:hover,.modern-site .sport-tile:hover,.modern-site .sport-choice-card:hover,.modern-site .price-entry:hover,.modern-site .home-country-card:hover,.modern-site .home-content-card:hover{transform:translateY(-7px);box-shadow:inset 0 0 0 1px rgba(255,90,31,.48),var(--vtr-shadow-hover);filter:saturate(1.08)}.modern-site .photo-card img,.modern-site .sport-tile>img,.modern-site .sport-choice-card__image,.modern-site .price-entry__image,.modern-site .home-country-card img,.modern-site .home-content-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease,filter .22s ease}.modern-site .photo-card:hover img,.modern-site .sport-tile:hover>img,.modern-site .sport-choice-card:hover .sport-choice-card__image,.modern-site .price-entry:hover .price-entry__image,.modern-site .home-country-card:hover img,.modern-site .home-content-card:hover img{transform:scale(1.06);filter:contrast(1.04)}.modern-site .sport-tile:after,.modern-site .sport-choice-card:after,.modern-site .price-entry:after,.modern-site .home-country-card:after,.modern-site .home-content-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.20) 34%,rgba(0,0,0,.86));z-index:1}.modern-site .sport-tile__content,.modern-site .sport-choice-card__body,.modern-site .price-entry__body,.modern-site .home-country-card__body,.modern-site .home-content-card__body{position:relative;z-index:2;padding:28px!important}.modern-site .sport-choice-card__kicker,.modern-site .price-entry__kicker,.modern-site .home-country-card__kicker{position:relative;z-index:2;color:var(--vtr-orange)!important;font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.modern-site .sport-tile h2,.modern-site .sport-choice-card h3,.modern-site .price-entry h2,.modern-site .home-country-card h3,.modern-site .home-content-card h3{color:#fff!important;letter-spacing:-.05em}.modern-site .sport-tile p,.modern-site .sport-choice-card p,.modern-site .price-entry p,.modern-site .home-country-card p,.modern-site .home-content-card p{color:rgba(255,255,255,.76)!important}
+.modern-site .photo-card,.modern-site .sport-tile,.modern-site .sport-choice-card,.modern-site .price-entry,.modern-site .home-country-card,.modern-site .home-content-card{position:relative;overflow:hidden;border:0!important;border-radius:var(--vtr-radius-lg)!important;background:#111;color:#fff;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),0 18px 58px rgba(0,0,0,.28);transition:transform .22s ease,box-shadow .22s ease,filter .22s ease}.modern-site .photo-card:hover,.modern-site .sport-tile:hover,.modern-site .sport-choice-card:hover,.modern-site .price-entry:hover,.modern-site .home-country-card:hover,.modern-site .home-content-card:hover{transform:translateY(-7px);box-shadow:inset 0 0 0 1px rgba(255,90,31,.48),var(--vtr-shadow-hover);filter:saturate(1.08)}.modern-site .photo-card img,.modern-site .sport-tile>img,.modern-site .sport-choice-card__image,.modern-site .price-entry__image,.modern-site .home-country-card img,.modern-site .home-content-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .55s ease,filter .22s ease}.modern-site .photo-card:hover img,.modern-site .sport-tile:hover>img,.modern-site .sport-choice-card:hover .sport-choice-card__image,.modern-site .price-entry:hover .price-entry__image,.modern-site .home-country-card:hover img,.modern-site .home-content-card:hover img{transform:scale(1.06);filter:contrast(1.04)}.modern-site .sport-tile:after,.modern-site .sport-choice-card:after,.modern-site .price-entry:after,.modern-site .home-country-card:after,.modern-site .home-content-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 64%,rgba(0,0,0,.22) 100%);z-index:1}.modern-site .sport-tile__content,.modern-site .sport-choice-card__body,.modern-site .price-entry__body,.modern-site .home-country-card__body,.modern-site .home-content-card__body{position:relative;z-index:2;padding:28px!important}.modern-site .sport-choice-card__kicker,.modern-site .price-entry__kicker,.modern-site .home-country-card__kicker{position:relative;z-index:2;color:var(--vtr-orange)!important;font-size:12px;font-weight:950;letter-spacing:.14em;text-transform:uppercase}.modern-site .sport-tile h2,.modern-site .sport-choice-card h3,.modern-site .price-entry h2,.modern-site .home-country-card h3,.modern-site .home-content-card h3{color:#fff!important;letter-spacing:-.05em}.modern-site .sport-tile p,.modern-site .sport-choice-card p,.modern-site .price-entry p,.modern-site .home-country-card p,.modern-site .home-content-card p{color:rgba(255,255,255,.76)!important}
 /* CTA */
 .modern-site .cta-panel,.modern-site .price-cta,.modern-site .home-contact,.modern-site .price-help-cta{border-radius:var(--vtr-radius-lg)!important;border:1px solid var(--vtr-line)!important;background:radial-gradient(circle at 92% 0%,rgba(255,90,31,.28),transparent 36%),linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,255,255,.025))!important;color:#fff!important;box-shadow:0 18px 58px rgba(0,0,0,.20)}.modern-site .cta-panel h2,.modern-site .price-cta h2,.modern-site .home-contact h2{color:#fff;letter-spacing:-.05em}.modern-site .cta-panel p,.modern-site .price-cta p,.modern-site .home-contact p{color:var(--vtr-muted)!important}
 /* Price tables */
@@ -22,3 +22,364 @@ html{scroll-behavior:smooth}body.modern-site{background:var(--vtr-bg);color:var(
 /* Dahab overview page-specific layout that is not a component */
 .dahab-redesign .sport-split>.sport-split__inner>.section-heading{display:none!important}.dahab-redesign .sport-split{padding-top:34px!important}.dahab-redesign .dahab-marquee{min-height:54px!important;height:54px!important;display:flex!important;align-items:center!important;margin:18px 0 0!important;border-top:1px solid rgba(255,255,255,.12)!important;border-bottom:1px solid rgba(255,255,255,.12)!important;background:#0a0a09!important}.dahab-redesign .dahab-marquee__track{align-items:center!important}.dahab-redesign .dahab-marquee__track span{font-size:14px!important;line-height:54px!important;letter-spacing:.12em!important}
 @media(max-width:980px){.modern-site .hero{min-height:680px}.modern-site .hero-content{width:min(var(--vtr-max),calc(100% - 32px));padding:130px 0 76px}.modern-site .section,.modern-site .home-section,.modern-site .price-section{padding:72px 0}.modern-site .home-advantages,.modern-site .hero-facts,.modern-site .hero-feature-pills,.modern-site .price-hero-features{gap:8px!important}.modern-site .vtr-footer__top{grid-template-columns:1fr 1fr}.modern-site .vtr-footer__brand{grid-column:1/-1}.dahab-redesign .dahab-marquee{margin-top:14px!important}}@media(max-width:620px){.modern-site .hero{min-height:640px}.modern-site .hero-content{width:min(100% - 28px,var(--vtr-max));padding:104px 0 54px}.modern-site .hero h1{font-size:clamp(44px,17vw,72px)}.modern-site .hero-lead{font-size:18px}.modern-site .section,.modern-site .home-section,.modern-site .price-section{padding:var(--vtr-section-mobile) 0}.modern-site .section-inner,.modern-site .home-inner,.modern-site .price-inner{width:min(100% - 28px,var(--vtr-max))}.modern-site .button,.modern-site .btn,.modern-site .sport-mini-btn{min-height:48px;padding:0 18px}.modern-site .hero-facts span,.modern-site .hero-feature-pills span,.modern-site .price-hero-features span,.modern-site .home-advantage{min-height:44px!important;padding:0 14px!important;font-size:11px!important}.modern-site .home-advantage{min-width:0!important;flex:1 1 calc(50% - 8px)!important}.modern-site .vtr-footer{padding:42px 18px 22px}.modern-site .vtr-footer__top{grid-template-columns:1fr}.modern-site .vtr-footer__bottom{align-items:flex-start;flex-direction:column}.modern-site .price-table thead{display:none}.modern-site .price-table tr{display:grid;gap:5px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.08)}.modern-site .price-table td{display:block;padding:0 18px;border:0}.modern-site .price-table td:nth-child(2){font-size:20px}.dahab-redesign .dahab-marquee{height:48px!important;min-height:48px!important;margin-top:12px!important}.dahab-redesign .dahab-marquee__track span{font-size:12px!important;line-height:48px!important}}
+
+/* Unified action controls: buttons, CTA links and compact action links. */
+:root {
+  --vtr-radius-btn: 4px;
+  --vtr-btn-height: 54px;
+  --vtr-btn-height-mobile: 48px;
+  --vtr-btn-padding-x: 26px;
+  --vtr-btn-padding-x-mobile: 18px;
+  --vtr-btn-font-size: 12px;
+  --vtr-btn-letter: .065em;
+}
+
+.modern-site .hero-actions,
+.modern-site .contact-actions,
+.modern-site .home-actions,
+.modern-site .contacts-actions,
+.modern-site .price-hero-actions,
+.modern-site .price-card-actions,
+.modern-site .price-cta__actions,
+.modern-site .cta-panel__actions,
+.modern-site .contacts-cta__actions,
+.modern-site .sport-cta__actions,
+.modern-site .sport-section__actions,
+.modern-site .bm-folder-actions,
+.modern-site .dahab-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.modern-site .button,
+.modern-site .btn,
+.modern-site button.button,
+.modern-site .sport-mini-btn,
+.modern-site .bm-mini-button,
+.modern-site .price-help-cta a,
+.modern-site .station-advice__cta,
+.modern-site .wsk-strip__button,
+.modern-site .water-area__actions a {
+  min-height: var(--vtr-btn-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 var(--vtr-btn-padding-x);
+  border-radius: var(--vtr-radius-btn);
+  font-size: var(--vtr-btn-font-size);
+  font-weight: 1000;
+  letter-spacing: var(--vtr-btn-letter);
+  line-height: 1.12;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.modern-site .button:hover,
+.modern-site .button:focus-visible,
+.modern-site .btn:hover,
+.modern-site .btn:focus-visible,
+.modern-site .sport-mini-btn:hover,
+.modern-site .sport-mini-btn:focus-visible,
+.modern-site .bm-mini-button:hover,
+.modern-site .bm-mini-button:focus-visible,
+.modern-site .price-help-cta a:hover,
+.modern-site .price-help-cta a:focus-visible,
+.modern-site .station-advice__cta:hover,
+.modern-site .station-advice__cta:focus-visible,
+.modern-site .wsk-strip__button:hover,
+.modern-site .wsk-strip__button:focus-visible,
+.modern-site .water-area__actions a:hover,
+.modern-site .water-area__actions a:focus-visible {
+  outline: 0;
+}
+
+.modern-site .button-primary,
+.modern-site .btn-primary,
+.modern-site .sport-mini-btn:not(.sport-mini-btn--ghost),
+.modern-site .bm-mini-button--primary,
+.modern-site .price-help-cta a:first-child,
+.modern-site .station-advice__cta,
+.modern-site .wsk-strip__button,
+.modern-site .water-area__primary {
+  background: var(--vtr-orange) !important;
+  border-color: var(--vtr-orange) !important;
+  color: #090807 !important;
+  box-shadow: none;
+}
+
+.modern-site .button-primary:hover,
+.modern-site .button-primary:focus-visible,
+.modern-site .btn-primary:hover,
+.modern-site .btn-primary:focus-visible,
+.modern-site .sport-mini-btn:not(.sport-mini-btn--ghost):hover,
+.modern-site .sport-mini-btn:not(.sport-mini-btn--ghost):focus-visible,
+.modern-site .bm-mini-button--primary:hover,
+.modern-site .bm-mini-button--primary:focus-visible,
+.modern-site .price-help-cta a:first-child:hover,
+.modern-site .price-help-cta a:first-child:focus-visible,
+.modern-site .station-advice__cta:hover,
+.modern-site .station-advice__cta:focus-visible,
+.modern-site .wsk-strip__button:hover,
+.modern-site .wsk-strip__button:focus-visible,
+.modern-site .water-area__primary:hover,
+.modern-site .water-area__primary:focus-visible {
+  background: var(--vtr-orange-2) !important;
+  border-color: var(--vtr-orange-2) !important;
+  color: #090807 !important;
+}
+
+.modern-site .button-ghost,
+.modern-site .button-secondary,
+.modern-site .btn-ghost,
+.modern-site .sport-mini-btn--ghost,
+.modern-site .bm-mini-button:not(.bm-mini-button--primary),
+.modern-site .price-help-cta a:not(:first-child),
+.modern-site .water-area__ghost {
+  background: rgba(255, 255, 255, .045) !important;
+  border-color: rgba(255, 255, 255, .22) !important;
+  color: #fff !important;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+}
+
+.modern-site .button-ghost:hover,
+.modern-site .button-ghost:focus-visible,
+.modern-site .button-secondary:hover,
+.modern-site .button-secondary:focus-visible,
+.modern-site .btn-ghost:hover,
+.modern-site .btn-ghost:focus-visible,
+.modern-site .sport-mini-btn--ghost:hover,
+.modern-site .sport-mini-btn--ghost:focus-visible,
+.modern-site .bm-mini-button:not(.bm-mini-button--primary):hover,
+.modern-site .bm-mini-button:not(.bm-mini-button--primary):focus-visible,
+.modern-site .price-help-cta a:not(:first-child):hover,
+.modern-site .price-help-cta a:not(:first-child):focus-visible,
+.modern-site .water-area__ghost:hover,
+.modern-site .water-area__ghost:focus-visible {
+  background: rgba(255, 90, 31, .10) !important;
+  border-color: rgba(255, 90, 31, .58) !important;
+  color: #fff !important;
+}
+
+.modern-site .text-link,
+.modern-site .price-entry__link,
+.modern-site .bm-card-link {
+  color: var(--vtr-orange-2);
+  font-size: 12px;
+  font-weight: 1000;
+  letter-spacing: var(--vtr-btn-letter);
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 3px;
+}
+
+.modern-site .text-link:hover,
+.modern-site .text-link:focus-visible,
+.modern-site .price-entry__link:hover,
+.modern-site .price-entry__link:focus-visible,
+.modern-site .bm-card-link:hover,
+.modern-site .bm-card-link:focus-visible {
+  color: #fff;
+  border-color: var(--vtr-orange);
+  outline: 0;
+}
+
+.modern-site .price-card .button,
+.modern-site .sport-price-card .button,
+.modern-site .wsk-price-card .button {
+  width: max-content;
+  max-width: 100%;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 620px) {
+  .modern-site .button,
+  .modern-site .btn,
+  .modern-site button.button,
+  .modern-site .sport-mini-btn,
+  .modern-site .bm-mini-button,
+  .modern-site .price-help-cta a,
+  .modern-site .station-advice__cta,
+  .modern-site .wsk-strip__button,
+  .modern-site .water-area__actions a {
+    min-height: var(--vtr-btn-height-mobile);
+    width: 100%;
+    padding: 0 var(--vtr-btn-padding-x-mobile);
+    white-space: normal;
+  }
+
+  .modern-site .hero-actions,
+  .modern-site .contact-actions,
+  .modern-site .home-actions,
+  .modern-site .contacts-actions,
+  .modern-site .price-hero-actions,
+  .modern-site .price-card-actions,
+  .modern-site .price-cta__actions,
+  .modern-site .cta-panel__actions,
+  .modern-site .contacts-cta__actions,
+  .modern-site .sport-cta__actions,
+  .modern-site .sport-section__actions,
+  .modern-site .bm-folder-actions,
+  .modern-site .dahab-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+}
+/* Brighter photo treatment: keep text readable without muting the images. */
+.modern-site .hero-image,
+.modern-site .home-hero__image,
+.modern-site .home-hero__slider img,
+.modern-site .sport-tile > img,
+.modern-site .sport-choice-card__image,
+.modern-site .price-entry__image,
+.modern-site .home-choice-card img,
+.modern-site .home-country-card img,
+.modern-site .home-content-card img,
+.modern-site .photo-card img,
+.modern-site .card-photo img,
+.modern-site .price-photo img,
+.modern-site .station-advice__list img,
+.modern-site .safety-rescue__photo img,
+.modern-site .station-atmosphere__card img,
+.modern-site .dahab-static-bg {
+  filter: saturate(1.18) contrast(1.03) brightness(1.12) !important;
+}
+
+.modern-site .hero-shade {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .08) 46%, rgba(0, 0, 0, 0) 78%),
+    linear-gradient(0deg, rgba(0, 0, 0, .14), transparent 46%) !important;
+}
+
+.modern-site .sport-tile::before,
+.modern-site .home-choice-card::before,
+.modern-site .price-entry::before,
+.modern-site .station-atmosphere__card::before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 64%, rgba(0, 0, 0, .20) 100%) !important;
+}
+
+.modern-site .sport-tile::after,
+.modern-site .sport-choice-card::after,
+.modern-site .price-entry::after,
+.modern-site .home-country-card::after,
+.modern-site .home-content-card::after,
+.modern-site .home-brand__media::after {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, .22) 100%) !important;
+}
+
+.modern-site .photo-card:hover img,
+.modern-site .sport-tile:hover > img,
+.modern-site .sport-choice-card:hover .sport-choice-card__image,
+.modern-site .price-entry:hover .price-entry__image,
+.modern-site .home-choice-card:hover img,
+.modern-site .home-country-card:hover img,
+.modern-site .home-content-card:hover img,
+.modern-site .station-atmosphere__card:hover img {
+  filter: saturate(1.22) contrast(1.04) brightness(1.16) !important;
+}
+
+/* Photo overlays final pass: remove the dark wash from image surfaces. */
+.modern-site .sport-tile::before,
+.modern-site .sport-tile::after,
+.modern-site .home-choice-card::before,
+.modern-site .home-choice-card::after,
+.modern-site .price-entry::before,
+.modern-site .price-entry::after,
+.modern-site .sport-choice-card::after,
+.modern-site .home-country-card::after,
+.modern-site .home-content-card::after,
+.modern-site .station-atmosphere__card::before,
+.modern-site .home-brand__media::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 68%, rgba(0, 0, 0, .18) 100%) !important;
+}
+
+.modern-site .hero-shade,
+body.home-page .home-hero::after {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .18), rgba(0, 0, 0, .06) 42%, rgba(0, 0, 0, 0) 78%),
+    linear-gradient(0deg, rgba(0, 0, 0, .12), transparent 45%) !important;
+}
+
+.modern-site .sport-tile__content,
+.modern-site .sport-choice-card__body,
+.modern-site .price-entry__body,
+.modern-site .home-choice-card__body,
+.modern-site .home-country-card__body,
+.modern-site .home-content-card__body,
+.modern-site .hero-content,
+body.home-page .home-hero__content {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+}
+
+/* Unified hero overlay: slightly darker, consistent across the site. */
+.modern-site .hero-shade,
+body.home-page .home-hero::after {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, .31), rgba(0, 0, 0, .13) 42%, rgba(0, 0, 0, 0) 78%),
+    linear-gradient(0deg, rgba(0, 0, 0, .31), transparent 44%) !important;
+}
+
+.modern-site .blog-media-hero::before,
+.modern-site .contacts-hero::before {
+  background:
+    linear-gradient(90deg, rgba(15, 14, 13, .31), rgba(15, 14, 13, .13) 42%, rgba(15, 14, 13, 0) 78%),
+    linear-gradient(0deg, rgba(15, 14, 13, .31), transparent 44%) !important;
+}
+
+.modern-site .blog-media-hero__image,
+.modern-site .contacts-hero__image {
+  filter: saturate(1.18) contrast(1.03) brightness(1.12) !important;
+}
+
+.modern-site .blog-media-hero__content,
+.modern-site .contacts-hero__content {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+}
+
+/* Station advice CTA: keep the request button centered. */
+.modern-site.dahab-redesign .station-advice {
+  text-align: center;
+}
+
+.modern-site.dahab-redesign .station-advice__list {
+  text-align: left;
+}
+
+.modern-site.dahab-redesign .station-advice > .station-advice__cta {
+  display: inline-flex !important;
+  width: auto;
+  min-width: 152px;
+  margin: 18px auto 0;
+}
+
+@media (max-width: 620px) {
+  .modern-site.dahab-redesign .station-advice > .station-advice__cta {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+
+/* Static photo layers should not render as orange labels. */
+.modern-site .station-atmosphere__card > .dahab-static-bg {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: transparent !important;
+  color: inherit !important;
+}

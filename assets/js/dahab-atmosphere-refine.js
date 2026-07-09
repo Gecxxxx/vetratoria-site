@@ -7,8 +7,8 @@
   const text = panel.querySelector('p');
   const chips = panel.querySelectorAll('.station-atmosphere__chips small');
 
-  if (title) title.textContent = 'Станция живёт между выходами на воду';
-  if (text) text.textContent = 'Здесь выбирают комплект, смотрят ветер, обсуждают попытки и возвращаются на воду снова. Не только урок — атмосфера Дахаба и команды рядом.';
+  if (title) title.textContent = 'Станция';
+  if (text) text.textContent = 'Комплект, ветер, старт и возвращение на воду.';
 
   const labels = ['вода', 'берег', 'прогресс'];
   chips.forEach((chip, index) => {

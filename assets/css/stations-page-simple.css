@@ -197,13 +197,13 @@
   object-position: center center;
   opacity: 0;
   transform: scale(1.02);
-  filter: saturate(.96) contrast(1.05) brightness(.9);
-  transition: opacity .72s ease, transform 4.8s ease;
+  filter: saturate(1.08) contrast(1.03) brightness(1.04);
+  transition: opacity 1.45s cubic-bezier(.22,.72,.22,1), transform 8.5s ease;
 }
 
 .station-slider__viewport img.is-active {
   opacity: 1;
-  transform: scale(1.065);
+  transform: scale(1.055);
 }
 
 .station-slider::after {

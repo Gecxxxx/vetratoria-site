@@ -45,21 +45,16 @@
   loadStyle('/assets/css/nav-production.css?v=20260705-nav-zindex-1');
   loadStyle('/assets/css/nav-fixed-all.css?v=20260705-fixed-all-1');
   loadStyle('/assets/css/hero-compact-global.css?v=20260706-hero-compact-global-1');
-  loadStyle('/assets/css/price-cleanup.css?v=20260708-price-card-cta-fix-1');
-  loadScript('/assets/js/copy-fixes.js?v=20260708-price-wording-1');
   loadScript('/assets/js/nav3-production.js?v=20260708-mobile-menu-open-all-1');
   loadScript('/assets/js/nav-fixed-all.js?v=20260705-fixed-all-1');
   loadScript('/assets/js/footer-unified.js?v=20260708-no-equipment-1');
 
-  if (isSportPage) {
-    loadScript('/assets/js/equipment-block-cleanup.js?v=20260708-safety-only-1');
-  }
 
   if (isHomePage) {
     loadStyle('/assets/css/home-redesign.css?v=20260704-home-stage-2');
-    loadStyle('/assets/css/home-photos.css?v=20260706-hero-slider-3');
+    loadStyle('/assets/css/home-photos.css?v=20260709-smooth-photos-1');
     loadStyle('/assets/css/home-layout-fix.css?v=20260706-final-hero-2');
-    loadScript('/assets/js/home-redesign.js?v=20260706-final-hero-1');
+    loadScript('/assets/js/home-redesign.js?v=20260709-smooth-photos-1');
   }
 
   if (isDahabPage) {
@@ -67,8 +62,8 @@
   }
 
   if (isDahabRoot) {
-    loadStyle('/assets/css/dahab-hero-cta.css?v=20260705-hero-cta-2');
-    loadScript('/assets/js/dahab-hero-cta.js?v=20260705-hero-cta-2');
+    loadStyle('/assets/css/dahab-hero-cta.css?v=20260709-hero-sports-1');
+    loadScript('/assets/js/dahab-hero-cta.js?v=20260709-hero-sports-1');
   }
 
   if (isAnyDahabPrice) {
@@ -99,10 +94,10 @@
     loadScript('/assets/js/photo-pass-0703.js?v=20260704-photo-final');
   }
 
-  loadStyle('/assets/css/vtr-components.css?v=20260704-design-system-3');
+  loadStyle('/assets/css/vtr-components.css?v=20260709-media-panel-1');
   loadStyle('/assets/css/vtr-card-position-fix.css?v=20260704-card-position-1');
 
   if (isHomePage) {
-    loadStyle('/assets/css/home-hero-edge-final.css?v=20260706-home-edge-final-1');
+    loadStyle('/assets/css/home-hero-edge-final.css?v=20260709-hero-overlay-1');
   }
 })();

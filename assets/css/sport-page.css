@@ -789,3 +789,39 @@
     flex-basis: 90%;
   }
 }
+
+/* Final photo pass: sport pages should keep bright, clean hero images. */
+.sport-page .sport-hero::before {
+  background: linear-gradient(0deg, rgba(15, 14, 13, .27), transparent 40%) !important;
+}
+
+.sport-page .sport-hero__media::after {
+  background: none !important;
+}
+
+.sport-page .sport-hero__media img {
+  filter: saturate(1.18) contrast(1.03) brightness(1.12) !important;
+}
+
+.sport-page .sport-hero__content {
+  text-shadow: 0 2px 16px rgba(0, 0, 0, .46);
+}
+
+.sport-page .sport-card__media img,
+.sport-page .sport-step img,
+.sport-page .sport-panorama img,
+.sport-page .sport-media__feature img,
+.sport-page .sport-media__gallery img,
+.sport-page .sport-cta__inner img {
+  filter: saturate(1.12) contrast(1.03) brightness(1.06);
+}
+
+.sport-page .sport-cta__inner::after {
+  background: linear-gradient(0deg, rgba(15, 14, 13, .42), rgba(15, 14, 13, .08));
+}
+
+@media (max-width: 760px) {
+  .sport-page .sport-hero::before {
+    background: linear-gradient(0deg, rgba(15, 14, 13, .31), transparent 44%) !important;
+  }
+}

@@ -10,7 +10,7 @@
     '/dahab/windsurf-kids/': ['Kids from 55$', 'Лёгкие паруса', 'Инструктор рядом', 'Спокойная вода'],
     '/dahab/stations/': ['Wing Center', 'Swiss Inn', 'Ganet Sinai', 'Подбор станции'],
     '/dahab/team/': ['Wingfoil team', 'Windsurf team', 'Kids instructors', 'Station support'],
-    '/dahab/equipment/': ['Wingfoil комплект', 'Windsurf комплект', 'Kids equipment', 'Защита'],
+    '/dahab/': ['Wingfoil комплект', 'Windsurf комплект', 'Kids equipment', 'Защита'],
     '/dahab/safety/': ['Проверка условий', 'Правила зоны', 'Rescue support', 'Контроль станции'],
   };
 

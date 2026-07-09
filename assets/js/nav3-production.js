@@ -26,55 +26,6 @@
   const a = (href, label, hint = '') => `<a class="${itemActive(href) ? 'is-active' : ''}" href="${href}"><strong>${label}</strong>${hint ? `<small>${hint}</small>` : ''}</a>`;
   const drop = (label, items, isActive = false) => `<div class="vtr-drop${isActive ? ' is-active' : ''}"><button type="button" aria-expanded="false">${label} <span aria-hidden="true">⌄</span></button><div class="vtr-drop__menu">${items.join('')}</div></div>`;
 
-  const ensureTopbarStyles = () => {
-    if (document.getElementById('vtr-topbar-final-styles')) return;
-    const style = document.createElement('style');
-    style.id = 'vtr-topbar-final-styles';
-    style.textContent = `
-      .vtr-nav__top{min-height:54px;display:grid!important;grid-template-columns:1fr auto 1fr!important;align-items:center!important;gap:20px!important;padding:8px 34px!important;background:#10100f!important;border-bottom:1px solid rgba(255,255,255,.1)!important}
-      .vtr-nav__top .vtr-nav__countries{height:auto!important;background:transparent!important;border:0!important;display:block!important}
-      .vtr-nav__top .vtr-nav__countries-inner{display:flex!important;align-items:center!important;justify-content:center!important;gap:26px!important}
-      .vtr-nav__top .vtr-nav__country{height:auto!important;padding:8px 8px!important;color:rgba(255,255,255,.72)!important;font-size:13px!important;font-weight:950!important;letter-spacing:.06em!important;text-transform:uppercase!important;border-bottom:2px solid transparent!important}
-      .vtr-nav__top .vtr-nav__country:hover,.vtr-nav__top .vtr-nav__country.is-active{color:#fff!important;background:rgba(255,90,31,.1)!important;border-bottom-color:#ff5a1f!important}
-      .vtr-nav__contacts{display:flex!important;align-items:center!important;gap:8px!important;justify-self:start!important;min-width:0!important;white-space:nowrap!important}
-      .vtr-nav__contacts a{color:#fff!important;font-size:14px!important;font-weight:850!important;line-height:1!important;text-decoration:none!important}
-      .vtr-nav__contacts a:hover{color:#ff8a3d!important}
-      .vtr-nav__right{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important;justify-self:end!important}
-      .vtr-nav__socials{display:flex!important;align-items:center!important;gap:10px!important}
-      .vtr-nav__socials a{color:#fff!important;font-size:13px!important;font-weight:950!important;letter-spacing:.02em!important;text-decoration:none!important}
-      .vtr-nav__socials a:hover{color:#ff8a3d!important}
-      .vtr-nav__lang-drop{position:relative!important}
-      .vtr-nav__lang-drop>button{display:flex!important;align-items:center!important;gap:6px!important;border:0!important;background:transparent!important;color:#fff!important;font:inherit!important;font-size:16px!important;font-weight:950!important;cursor:pointer!important}
-      .vtr-nav__lang-drop>button span{color:#ff5a1f!important}
-      .vtr-nav__lang-menu{position:absolute!important;top:100%!important;right:0!important;min-width:86px!important;padding:7px!important;background:#11100f!important;border:1px solid rgba(255,255,255,.12)!important;box-shadow:0 18px 48px rgba(0,0,0,.38)!important;opacity:0!important;visibility:hidden!important;transform:translateY(6px)!important;pointer-events:none!important;z-index:20!important}
-      .vtr-nav__lang-drop:hover .vtr-nav__lang-menu,.vtr-nav__lang-drop:focus-within .vtr-nav__lang-menu,.vtr-nav__lang-drop.is-open .vtr-nav__lang-menu{opacity:1!important;visibility:visible!important;transform:translateY(0)!important;pointer-events:auto!important}
-      .vtr-nav__lang-menu a{display:block!important;padding:8px 10px!important;color:rgba(255,255,255,.78)!important;font-size:13px!important;font-weight:900!important;text-decoration:none!important}
-      .vtr-nav__lang-menu a:hover{color:#fff!important;background:rgba(255,90,31,.1)!important}
-      @media(max-width:1100px){
-        .vtr-nav__top{min-height:38px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:0!important;padding:5px 10px!important}
-        .vtr-nav__contacts,.vtr-nav__right{display:none!important}
-        .vtr-nav__top .vtr-nav__countries{width:100%!important}
-        .vtr-nav__top .vtr-nav__countries-inner{width:100%!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important;padding:0!important}
-        .vtr-nav__top .vtr-nav__country{display:flex!important;align-items:center!important;justify-content:center!important;min-width:0!important;padding:7px 4px!important;font-size:10px!important;line-height:1!important;text-align:center!important;white-space:nowrap!important}
-        .site-header[data-nav].is-open .vtr-nav__mobile{top:var(--vtr-mobile-menu-top,94px)!important;height:calc(100dvh - var(--vtr-mobile-menu-top,94px))!important;bottom:auto!important}
-        .vtr-mobile-group--primary{padding:10px!important;border:1px solid rgba(255,90,31,.22)!important;background:rgba(255,90,31,.055)!important}
-        .vtr-mobile-group--primary>b{font-size:12px!important;color:#fff!important}
-        .vtr-mobile-details{display:block!important;margin-bottom:16px!important;border:1px solid rgba(255,255,255,.08)!important;background:rgba(255,255,255,.025)!important}
-        .vtr-mobile-details>summary{min-height:44px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;padding:0 12px!important;color:#ff5a1f!important;font-size:11px!important;font-weight:1000!important;letter-spacing:.12em!important;text-transform:uppercase!important;cursor:pointer!important;list-style:none!important}
-        .vtr-mobile-details>summary::-webkit-details-marker{display:none!important}
-        .vtr-mobile-details>summary:after{content:'⌄';color:#ff5a1f;font-size:13px;transition:transform .18s ease}
-        .vtr-mobile-details[open]>summary:after{transform:rotate(180deg)}
-        .vtr-mobile-details__content{display:grid!important;gap:6px!important;padding:0 10px 10px!important}
-      }
-      @media(max-width:560px){
-        .vtr-nav__top{min-height:36px!important;padding:4px 8px!important}
-        .vtr-nav__top .vtr-nav__countries-inner{gap:3px!important}
-        .vtr-nav__top .vtr-nav__country{font-size:9px!important;padding:7px 3px!important;letter-spacing:.04em!important}
-      }
-    `;
-    document.head.append(style);
-  };
-
   const countries = [
     ['dahab', '/dahab/', 'Египет'],
     ['vietnam', '/vietnam/', 'Вьетнам'],
@@ -166,7 +117,6 @@
   };
 
   const run = () => {
-    ensureTopbarStyles();
     const header = document.querySelector('[data-nav]');
     if (!header) return;
     document.querySelectorAll('.direction-nav').forEach((node) => node.remove());

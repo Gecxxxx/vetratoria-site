@@ -24,7 +24,7 @@
         <img src="/assets/img/final/stations/wingfoil-station.webp" alt="Станция Vetratoria в Дахабе" loading="lazy" decoding="async">
         <span>Цены</span>
         <strong>Форматы без пакетов</strong>
-        <em>Катаетесь и платите по факту</em>
+        <em>Формат и расчёт по фактическому объёму</em>
       </a>
 
       <div class="station-atmosphere__panel">

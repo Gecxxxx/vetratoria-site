@@ -38,7 +38,7 @@
     if (next) next.addEventListener('click', () => step(1));
 
     if (slides.length > 1) {
-      window.setInterval(() => step(1), 4200);
+      window.setInterval(() => step(1), 5800);
     }
   });
 })();

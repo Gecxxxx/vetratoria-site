@@ -1,11 +1,11 @@
 /* Wingfoil page uploaded photo layer */
 
 .sport-page--wingfoil .sport-hero__media img {
-  transition: opacity 650ms ease, transform 5200ms ease;
+  transition: opacity 1.45s cubic-bezier(.22,.72,.22,1), transform 8.5s ease;
 }
 
 .sport-page--wingfoil .sport-hero__media img[data-wingfoil-hero-slide="true"] {
-  transform: scale(1.03);
+  transform: scale(1.045);
 }
 
 .wingfoil-safety-photos {
@@ -66,4 +66,31 @@
 @media (max-width: 760px) {
   .wingfoil-safety-photos { grid-template-columns: 1fr; }
   .wingfoil-safety-photos figure { min-height: 260px; }
+}
+
+.sport-page--wingfoil .sport-hero__media img.wingfoil-hero-layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.02);
+  transition: opacity 1.45s cubic-bezier(.22,.72,.22,1), transform 8.5s ease;
+  will-change: opacity, transform;
+}
+
+.sport-page--wingfoil .sport-hero__media img.wingfoil-hero-layer.is-active {
+  opacity: 1;
+  transform: scale(1.055);
+}
+
+/* Keep cross-fade layers from collapsing the mobile hero media area. */
+.sport-page--wingfoil .sport-hero__media {
+  min-height: clamp(420px, calc(100vh - 118px), 760px);
+}
+
+@media (max-width: 1120px) {
+  .sport-page--wingfoil .sport-hero__media { min-height: 420px; }
+}
+
+@media (max-width: 760px) {
+  .sport-page--wingfoil .sport-hero__media { min-height: 330px; }
 }

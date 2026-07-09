@@ -46,6 +46,6 @@
   setActiveSlide(0);
 
   if (slides.length > 1) {
-    window.setInterval(() => setActiveSlide(active + 1), 3600);
+    window.setInterval(() => setActiveSlide(active + 1), 5600);
   }
 })();
